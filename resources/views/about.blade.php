@@ -42,7 +42,7 @@
 								Sed nec feugiat sem, nec ultrices orci. Duis ultrices ultricies fringilla. Aliquam convallis diam eu lectus porta, sit amet viverra nibh tincidunt. Etiam et luctus nisi. Integer posuere, augue at elementum aliquet, mauris ante dictum dui, eu pellentesque arcu ante eget libero. Sed consectetur fermentum felis sit amet eleifend.
 							</p>
 							<div class="question">
-								Асуулт байна уу? <a href="#" class="btn btn-primary">Холбоо барих</a>
+								Асуулт байна уу? <a href="\contact" class="btn btn-primary">Холбоо барих</a>
 							</div>
 						</div>
 					</div>

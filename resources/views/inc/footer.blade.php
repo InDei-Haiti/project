@@ -11,7 +11,7 @@
             <p class="brand-description">
               Ирлээ.NET сайтыг Японд амьдарч буй Монголчууддаа зориулан нээв.
             </p>
-            <a href="page.html" class="btn btn-magz white">Бидний тухай <i class="ion-ios-arrow-thin-right"></i></a>
+            <a href="\about" class="btn btn-magz white">Бидний тухай <i class="ion-ios-arrow-thin-right"></i></a>
           </div>
         </div>
       </div>
