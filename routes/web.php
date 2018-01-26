@@ -19,7 +19,9 @@ Route::get('/503','PagesController@getError503');
 Route::get('/about','PagesController@getAbout');
 Route::get('/contact','PagesController@getContact');
 Route::get('/single','PagesController@getSingle');
+Route::get('/category','PagesController@getCategory');
+Route::get('/search','PagesController@getSearch');
 
-Route::post('/messages','MessagesController@getMessages');
+Auth::routes();
 
-Route::post('contact/submit','MessagesController@submit');
+Route::get('/home', 'HomeController@index')->name('home');

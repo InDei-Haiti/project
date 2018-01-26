@@ -30,11 +30,9 @@
                 <li><a href="reset">Reset Password</a></li>
               </ul>
             </li>
-            <li><a href="category">Category</a></li>
-            <li><a href="single">Single</a></li>
-            <li><a href="page">Page</a></li>
-            <li><a href="search">Search</a></li>
-            <li><a href="contact">Холбоо барих</a></li>
+            <li><a href="category">Ангилал</a></li>
+            <li><a href="single">Ганц хуудас</a></li>
+            <li><a href="search">Хайлт</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Алдаа <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">

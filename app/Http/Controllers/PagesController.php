@@ -30,5 +30,11 @@ class PagesController extends Controller
   public function getSingle(){
     return view('single');
   }
+  public function getCategory(){
+    return view('category');
+  }
+  public function getSearch(){
+    return view('search');
+  }
     //
 }

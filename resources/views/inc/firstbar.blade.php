@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-12">
         <div class="brand">
-          <a href="index.html">
+          <a href="index">
             <img src="images/logo.png" alt="Magz Logo">
           </a>
         </div>
@@ -32,8 +32,8 @@
       </div>
       <div class="col-md-3 col-sm-12 text-right">
         <ul class="nav-icons">
-          <li><a href="register.html"><i class="ion-person-add"></i><div>Элсэх</div></a></li>
-          <li><a href="login.html"><i class="ion-person"></i><div>Нэвтрэх</div></a></li>
+          <li><a href="register"><i class="ion-person-add"></i><div>Элсэх</div></a></li>
+          <li><a href="login"><i class="ion-person"></i><div>Нэвтрэх</div></a></li>
         </ul>
       </div>
     </div>
