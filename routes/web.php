@@ -18,6 +18,7 @@ Route::get('/500','PagesController@getError500');
 Route::get('/503','PagesController@getError503');
 Route::get('/about','PagesController@getAbout');
 Route::get('/contact','PagesController@getContact');
+Route::get('/single','PagesController@getSingle');
 
 Route::post('/messages','MessagesController@getMessages');
 

@@ -27,5 +27,8 @@ class PagesController extends Controller
   public function getError503(){
     return view('errors.503');
   }
+  public function getSingle(){
+    return view('single');
+  }
     //
 }

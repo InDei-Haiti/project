@@ -14,34 +14,34 @@
     <div id="menu-list">
       <ul class="nav-list">
         <li class="for-tablet nav-title"><a>Цэс</a></li>
-        <li class="for-tablet"><a href="login.html">Нэвтрэх</a></li>
-        <li class="for-tablet"><a href="register.html">Бүртгүүлэх</a></li>
+        <li class="for-tablet"><a href="login">Нэвтрэх</a></li>
+        <li class="for-tablet"><a href="register">Бүртгүүлэх</a></li>
         <li><a href="/">Нүүр хуудас</a></li>
         <li class="dropdown magz-dropdown">
-          <a href="category.html">Хуудас<i class="ion-ios-arrow-right"></i></a>
+          <a href="category">Хуудас<i class="ion-ios-arrow-right"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="index.html">Нүүр хуудас</a></li>
+            <li><a href="index">Нүүр хуудас</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Баталгаажуулалт <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="forgot.html">Forgot Password</a></li>
-                <li><a href="reset.html">Reset Password</a></li>
+                <li><a href="login">Login</a></li>
+                <li><a href="register">Register</a></li>
+                <li><a href="forgot">Forgot Password</a></li>
+                <li><a href="reset">Reset Password</a></li>
               </ul>
             </li>
-            <li><a href="category.html">Category</a></li>
-            <li><a href="single.html">Single</a></li>
-            <li><a href="page.html">Page</a></li>
-            <li><a href="search.html">Search</a></li>
+            <li><a href="category">Category</a></li>
+            <li><a href="single">Single</a></li>
+            <li><a href="page">Page</a></li>
+            <li><a href="search">Search</a></li>
             <li><a href="contact">Холбоо барих</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Алдаа <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="403.html">403</a></li>
-                <li><a href="404.html">404</a></li>
-                <li><a href="500.html">500</a></li>
-                <li><a href="503.html">503</a></li>
+                <li><a href="403">403</a></li>
+                <li><a href="404">404</a></li>
+                <li><a href="500">500</a></li>
+                <li><a href="503">503</a></li>
               </ul>
             </li>
           </ul>
@@ -61,8 +61,7 @@
           </ul>
         </li>
         <li><a href="/about">Бидний тухай </a></li>
-        <li><a href="/contact">Холбоо барих </a>
-        </li>
+        <li><a href="/contact">Холбоо барих </a></li>
       </ul>
     </div>
   </div>

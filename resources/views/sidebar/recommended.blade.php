@@ -16,7 +16,7 @@
       <article class="article-fw">
         <div class="inner">
           <figure>
-            <a href="single.html">
+            <a href="single">
               <img src="images/news/img16.jpg" alt="Sample Article">
             </a>
           </figure>
@@ -25,7 +25,7 @@
               <div class="time">12-р сарын 31, 2018</div>
               <div class="category"><a href="category.html">Спорт</a></div>
             </div>
-            <h1><a href="single.html">Donec congue turpis vitae mauris</a></h1>
+            <h1><a href="single">Donec congue turpis vitae mauris</a></h1>
             <p>
               Donec congue turpis vitae mauris condimentum luctus. Ut dictum neque at egestas convallis.
             </p>
@@ -36,12 +36,12 @@
       <article class="article-mini">
         <div class="inner">
           <figure>
-            <a href="single.html">
+            <a href="single">
               <img src="images/news/img05.jpg" alt="Sample Article">
             </a>
           </figure>
           <div class="padding">
-            <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+            <h1><a href="single">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
             <div class="detail">
               <div class="category"><a href="category.html">Улс төр</a></div>
               <div class="time">12-р сарын 22, 2018</div>
@@ -52,12 +52,12 @@
       <article class="article-mini">
         <div class="inner">
           <figure>
-            <a href="single.html">
+            <a href="single">
               <img src="images/news/img02.jpg" alt="Sample Article">
             </a>
           </figure>
           <div class="padding">
-            <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
+            <h1><a href="single">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
             <div class="detail">
               <div class="category"><a href="category.html">Аялал</a></div>
               <div class="time">12-р сарын 21, 2018</div>
@@ -68,12 +68,12 @@
       <article class="article-mini">
         <div class="inner">
           <figure>
-            <a href="single.html">
+            <a href="single">
               <img src="images/news/img10.jpg" alt="Sample Article">
             </a>
           </figure>
           <div class="padding">
-            <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+            <h1><a href="single">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
             <div class="detail">
               <div class="category"><a href="category.html">Эрүүл мэнд</a></div>
               <div class="time">12-р сарын 20, 2018</div>
