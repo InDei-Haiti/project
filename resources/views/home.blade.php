@@ -36,7 +36,7 @@
                 <img src="images/news/img04.jpg" alt="Sample Article">
               </figure>
               <div class="details">
-                <div class="category"><a href="category">Computer</a></div>
+                <div class="category"><a href="category">Технологи</a></div>
                 <h1><a href="/single">Phasellus iaculis quam sed est elementum vel ornare ligula venenatis</a></h1>
                 <div class="time">12-р сарын 26, 2018</div>
               </div>
@@ -62,7 +62,7 @@
                 <img src="images/news/img13.jpg" alt="Sample Article">
               </figure>
               <div class="details">
-                <div class="category"><a href="category">International</a></div>
+                <div class="category"><a href="category">Дэлхий дахинд</a></div>
                 <h1><a href="/single">Maecenas accumsan tortor ut velit pharetra mollis</a></h1>
                 <div class="time">October 12, 2018</div>
               </div>
@@ -100,12 +100,12 @@
                       <div class="time">12-р сарын 10, 2018</div>
                       <div class="category"><a href="category">Эрүүл мэнд</a></div>
                     </div>
-                    <h2><a href="/single">Duis aute irure dolor in reprehenderit in voluptate</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h2><a href="/single">{{ $posts->title }}</a></h2>
+                    <p>{{ $posts->short_content }}</p>
                     <footer>
                       <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a>
                       <a class="btn btn-primary more" href="/single">
-                        <div>More</div>
+                        <div>Уншъя</div>
                         <div><i class="ion-ios-arrow-thin-right"></i></div>
                       </a>
                     </footer>
@@ -129,7 +129,7 @@
                     <footer>
                       <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>327</div></a>
                       <a class="btn btn-primary more" href="/single">
-                        <div>More</div>
+                        <div>Уншъя</div>
                         <div><i class="ion-ios-arrow-thin-right"></i></div>
                       </a>
                     </footer>
@@ -157,7 +157,7 @@
                     <footer>
                       <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1083</div></a>
                       <a class="btn btn-primary more" href="/single">
-                        <div>More</div>
+                        <div>Уншъя</div>
                         <div><i class="ion-ios-arrow-thin-right"></i></div>
                       </a>
                     </footer>
@@ -181,7 +181,7 @@
                     <footer>
                       <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>980</div></a>
                       <a class="btn btn-primary more" href="/single">
-                        <div>More</div>
+                        <div>Уншъя</div>
                         <div><i class="ion-ios-arrow-thin-right"></i></div>
                       </a>
                     </footer>
@@ -302,7 +302,7 @@
                   <div class="padding">
                     <h1><a href="/single">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
                     <div class="detail">
-                      <div class="category"><a href="category">International</a></div>
+                      <div class="category"><a href="category">Дэлхий дахинд</a></div>
                       <div class="time">12-р сарын 20, 2018</div>
                     </div>
                   </div>
@@ -318,7 +318,7 @@
                   <div class="padding">
                     <h1><a href="/single">Aliquam et metus convallis tincidunt velit ut rhoncus dolor</a></h1>
                     <div class="detail">
-                      <div class="category"><a href="category">Computer</a></div>
+                      <div class="category"><a href="category">Технологи</a></div>
                       <div class="time">12-р сарын 19, 2018</div>
                     </div>
                   </div>
@@ -328,7 +328,7 @@
           </div>
         </div>
         <div class="line top">
-          <div>Just Another News</div>
+          <div>Бусад мэдээ</div>
         </div>
         <div class="row">
           <article class="col-md-12 article-list">
@@ -341,7 +341,7 @@
               <div class="details">
                 <div class="detail">
                   <div class="category">
-                    <a href="#">Film</a>
+                    <a href="#">Кино</a>
                   </div>
                   <div class="time">12-р сарын 19, 2018</div>
                 </div>
@@ -352,7 +352,7 @@
                 <footer>
                   <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>273</div></a>
                   <a class="btn btn-primary more" href="/single">
-                    <div>More</div>
+                    <div>Уншъя</div>
                     <div><i class="ion-ios-arrow-thin-right"></i></div>
                   </a>
                 </footer>
@@ -362,7 +362,7 @@
           <article class="col-md-12 article-list">
             <div class="inner">
               <div class="badge">
-                Sponsored
+                Захиалгат
               </div>
               <figure>
                 <a href="/single">
@@ -383,7 +383,7 @@
                 <footer>
                   <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>4209</div></a>
                   <a class="btn btn-primary more" href="/single">
-                    <div>More</div>
+                    <div>Уншъя</div>
                     <div><i class="ion-ios-arrow-thin-right"></i></div>
                   </a>
                 </footer>
@@ -411,7 +411,7 @@
                 <footer>
                   <a href="#" class="love active"><i class="ion-android-favorite"></i> <div>302</div></a>
                   <a class="btn btn-primary more" href="/single">
-                    <div>More</div>
+                    <div>Уншъя</div>
                     <div><i class="ion-ios-arrow-thin-right"></i></div>
                   </a>
                 </footer>
@@ -439,7 +439,7 @@
                 <footer>
                   <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>783</div></a>
                   <a class="btn btn-primary more" href="/single">
-                    <div>More</div>
+                    <div>Уншъя</div>
                     <div><i class="ion-ios-arrow-thin-right"></i></div>
                   </a>
                 </footer>
