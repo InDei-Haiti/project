@@ -47,15 +47,15 @@
         <li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#">Мэдээ <i class="ion-ios-arrow-right"></i> <div class="badge">Шинэ</div></a>
           @include('inc.metamenu')
         </li>
-        <li class="dropdown magz-dropdown"><a href="#">Dropdown Icons <i class="ion-ios-arrow-right"></i></a>
+        <li class="dropdown magz-dropdown"><a href="#">Хэрэглэгч <i class="ion-ios-arrow-right"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="#"><i class="icon ion-person"></i> My Account</a></li>
-            <li><a href="#"><i class="icon ion-heart"></i> Favorite</a></li>
-            <li><a href="#"><i class="icon ion-chatbox"></i> Comments</a></li>
-            <li><a href="#"><i class="icon ion-key"></i> Change Password</a></li>
-            <li><a href="#"><i class="icon ion-settings"></i> Settings</a></li>
+            <li><a href="#"><i class="icon ion-person"></i> Миний данс</a></li>
+            <li><a href="#"><i class="icon ion-heart"></i> Дуртай</a></li>
+            <li><a href="#"><i class="icon ion-chatbox"></i> Сэтгэгдэл</a></li>
+            <li><a href="#"><i class="icon ion-key"></i> Нууц үгээ солих</a></li>
+            <li><a href="#"><i class="icon ion-settings"></i> Тохиргоо</a></li>
             <li class="divider"></li>
-            <li><a href="#"><i class="icon ion-log-out"></i> Logout</a></li>
+            <li><a href="#"><i class="icon ion-log-out"></i> Гарах</a></li>
           </ul>
         </li>
         <li><a href="/about">Бидний тухай </a></li>
