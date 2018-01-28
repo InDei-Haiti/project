@@ -7,13 +7,13 @@
     <div class="col-lg-4">
       <ul class="list-group">
         <li class="list-group-item">
-          <a href="{{route('admin')}}">Home</a>
+          <a href="{{route('admin')}}">Нүүр хуудас</a>
         </li>
         <li class="list-group-item">
-          <a href="{{route('post.create')}}">Create a new post</a>
+          <a href="{{route('post.create')}}">Мэдээ шинээр нэмэх</a>
         </li>
         <li class="list-group-item">
-          <a href="{{route('post.create')}}">Create a new post</a>
+          <a href="{{route('category.create')}}">Ангилал шинээр  нэмэх</a>
         </li>
       </ul>
     </div>
