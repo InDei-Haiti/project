@@ -39,5 +39,8 @@ class PagesController extends Controller
   public function getSearch(){
     return view('search');
   }
+  public function getAdmin(){
+    return view('admin.dashboard');
+  }
     //
 }

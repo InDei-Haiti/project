@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="megamenu-title">Trending</h2>
+            <h2 class="megamenu-title">Шинэ загвар</h2>
           </div>
         </div>
         <ul class="vertical-menu">

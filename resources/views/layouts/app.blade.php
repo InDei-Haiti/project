@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ирлээ.NET</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/scripts/bootstrap/bootstrap.min.css">
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="/scripts/ionicons/css/ionicons.min.css">
-    <!-- Toast -->
-    <link rel="stylesheet" href="/scripts/toast/jquery.toast.min.css">
-    <!-- OwlCarousel -->
-    <link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="/scripts/magnific-popup/dist/magnific-popup.css">
-    <link rel="stylesheet" href="/scripts/sweetalert/dist/sweetalert.css">
-    <!-- Custom style -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/skins/all.css">
-    <link rel="stylesheet" href="/css/demo.css">
-    <!-- <link rel="stylesheet" href="/css/app.css"> -->
-  </head>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Монголын хамгийн том портал сайт">
+		<meta name="author" content="Сонинхангай">
+		<meta name="keyword" content="Mongolian Portal Website">
+		<!-- Shareable -->
+		<meta property="og:title" content="Irlee.NET" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://irlee.net" />
+		<meta property="og:image" content="http://irlee.net/images/news/img01.jpg" />
+		<title>Ирлээ.NET</title>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+		<!-- IonIcons -->
+		<link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+		<!-- Toast -->
+		<link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+		<!-- OwlCarousel -->
+		<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+		<!-- Magnific Popup -->
+		<link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
+		<link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+		<!-- Custom style -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/skins/all.css">
+		<link rel="stylesheet" href="css/demo.css">
+	 </head>
   <body class="skin-default">
     @include('inc.header')
     @yield('content')
