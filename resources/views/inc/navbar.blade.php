@@ -2,7 +2,7 @@
   <div class="container">
     <div class="brand">
       <a href="#">
-        <img src="images/logo.png" alt="Magz Logo">
+        <img src="{{asset('images/logo.png')}}" alt="Magz Logo">
       </a>
     </div>
     <div class="mobile-toggle">

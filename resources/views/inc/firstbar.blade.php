@@ -4,7 +4,7 @@
       <div class="col-md-3 col-sm-12">
         <div class="brand">
           <a href="/">
-            <img src="images/logo.png" alt="Magz Logo">
+            <img src="{{asset('images/logo.png')}}" alt="Magz Logo">
           </a>
         </div>
       </div>

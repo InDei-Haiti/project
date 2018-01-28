@@ -6,7 +6,7 @@
           <h1 class="block-title">Компаний тухай</h1>
           <div class="block-body">
             <figure class="foot-logo">
-              <img src="images/logo.png" class="img-responsive" alt="Logo">
+              <img src="{{asset('images/logo.png')}}" class="img-responsive" alt="Logo">
             </figure>
             <p class="brand-description">
               Ирлээ.NET сайтыг Японд амьдарч буй Монголчууддаа зориулан нээв.
@@ -54,48 +54,48 @@
             <article class="article-mini">
               <div class="inner">
                 <figure>
-                  <a href="single.html">
-                    <img src="images/news/img12.jpg" alt="Sample Article">
+                  <a href="single">
+                    <img src="{{asset('images/news/img12.jpg')}}" alt="Sample Article">
                   </a>
                 </figure>
                 <div class="padding">
-                  <h1><a href="single.html">Donec consequat lorem quis augue pharetra</a></h1>
+                  <h1><a href="single">Donec consequat lorem quis augue pharetra</a></h1>
                 </div>
               </div>
             </article>
             <article class="article-mini">
               <div class="inner">
                 <figure>
-                  <a href="single.html">
-                    <img src="images/news/img14.jpg" alt="Sample Article">
+                  <a href="single">
+                    <img src="{{asset('images/news/img14.jpg')}}" alt="Sample Article">
                   </a>
                 </figure>
                 <div class="padding">
-                  <h1><a href="single.html">eu dapibus risus aliquam etiam ut venenatis</a></h1>
+                  <h1><a href="single">eu dapibus risus aliquam etiam ut venenatis</a></h1>
                 </div>
               </div>
             </article>
             <article class="article-mini">
               <div class="inner">
                 <figure>
-                  <a href="single.html">
-                    <img src="images/news/img15.jpg" alt="Sample Article">
+                  <a href="single">
+                    <img src="{{asset('images/news/img15.jpg')}}" alt="Sample Article">
                   </a>
                 </figure>
                 <div class="padding">
-                  <h1><a href="single.html">Nulla facilisis odio quis gravida vestibulum </a></h1>
+                  <h1><a href="single">Nulla facilisis odio quis gravida vestibulum </a></h1>
                 </div>
               </div>
             </article>
             <article class="article-mini">
               <div class="inner">
                 <figure>
-                  <a href="single.html">
-                    <img src="images/news/img16.jpg" alt="Sample Article">
+                  <a href="single">
+                    <img src="{{asset('images/news/img16.jpg')}}" alt="Sample Article">
                   </a>
                 </figure>
                 <div class="padding">
-                  <h1><a href="single.html">Proin venenatis pellentesque arcu vitae </a></h1>
+                  <h1><a href="single">Proin venenatis pellentesque arcu vitae </a></h1>
                 </div>
               </div>
             </article>
@@ -176,9 +176,9 @@
         <div class="block">
           <div class="block-body no-margin">
             <ul class="footer-nav-horizontal">
-              <li><a href="index.html">Нүүр хуудас</a></li>
+              <li><a href="index">Нүүр хуудас</a></li>
               <li><a href="contact">Холбогдох</a></li>
-              <li><a href="page.html">Бидний тухай</a></li>
+              <li><a href="page">Бидний тухай</a></li>
             </ul>
           </div>
         </div>

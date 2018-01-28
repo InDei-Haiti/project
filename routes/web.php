@@ -25,15 +25,18 @@ Route::get('/search','PagesController@getSearch');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin','PagesController@getAdmin');
+Route::get('/admin',[
+  'uses'=>'PagesController@getAdmin',
+  'as'=>'admin'
+]);
 
-// Route::group(['prefix'=>'admin'],function(){
-//   Route::get('/post/create',[
-//     'uses' => 'PostsController@create',
-//     'as' => 'post.create'
-//   ]);
-//   Route::post('/post/store',[
-//     'uses' => 'PostsController@store',
-//     'as' => 'post.store'
-//   ]);
-// });
+Route::group(['prefix'=>'admin'],function(){
+  Route::get('/post/create',[
+    'uses' => 'PostsController@create',
+    'as' => 'post.create'
+  ]);
+  Route::post('/post/store',[
+    'uses' => 'PostsController@store',
+    'as' => 'post.store'
+  ]);
+});

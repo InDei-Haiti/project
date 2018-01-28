@@ -16,7 +16,7 @@
         <div class="inner">
           <figure>
             <a href="/single">
-              <img src="{{ 'images/news/img0'.$post->id.'.jpg' }}" alt="Sample Article">
+              <img src="{{ asset('images/news/img0'.$post->id.'.jpg') }}" alt="Sample Article">
             </a>
           </figure>
           <div class="padding">
