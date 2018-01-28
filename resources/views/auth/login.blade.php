@@ -13,7 +13,7 @@
               <input type="text" name="username" class="form-control">
             </div>
             <div class="form-group">
-              <label class="fw">Password
+              <label class="fw">Нууц үг
                 <a href="forgot.html" class="pull-right">Forgot Password?</a>
               </label>
               <input type="password" name="password" class="form-control">

@@ -8,11 +8,11 @@
           </div>
         </div>
         <ul class="vertical-menu">
-          <li><a href="#"><i class="ion-ios-circle-outline"></i> Mega menu is a new feature</a></li>
-          <li><a href="#"><i class="ion-ios-circle-outline"></i> This is an example</a></li>
-          <li><a href="#"><i class="ion-ios-circle-outline"></i> For a submenu item</a></li>
-          <li><a href="#"><i class="ion-ios-circle-outline"></i> You can add</a></li>
-          <li><a href="#"><i class="ion-ios-circle-outline"></i> Your own items</a></li>
+          <li><a href="#"><i class="ion-ios-circle-outline"></i> Энэхүү цэс нь шинэ загвар юм</a></li>
+          <li><a href="#"><i class="ion-ios-circle-outline"></i> Энэ бол ердөө жишээ</a></li>
+          <li><a href="#"><i class="ion-ios-circle-outline"></i> Та энэхүү цэсэнд зориулан</a></li>
+          <li><a href="#"><i class="ion-ios-circle-outline"></i> Өөрийнхөө хүссэн зүйлийг</a></li>
+          <li><a href="#"><i class="ion-ios-circle-outline"></i> Нэмж болно.</a></li>
         </ul>
       </div>
       <div class="col-md-9">

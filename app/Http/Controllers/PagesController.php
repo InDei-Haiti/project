@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 
 class PagesController extends Controller
 {
   public function getHome(){
-    $posts=Post::find(1);
+    $posts=Post::join('categories','posts.category_id','=','categories.id')->select('posts.*','categories.name')->orderBy('id','desc')->take(4)->get();
     return view('home')->with('posts',$posts);
   }
   public function getAbout(){

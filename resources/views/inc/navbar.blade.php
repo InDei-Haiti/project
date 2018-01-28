@@ -16,11 +16,10 @@
         <li class="for-tablet nav-title"><a>Цэс</a></li>
         <li class="for-tablet"><a href="login">Нэвтрэх</a></li>
         <li class="for-tablet"><a href="register">Бүртгүүлэх</a></li>
-        <li><a href="/">Нүүр хуудас</a></li>
         <li class="dropdown magz-dropdown">
           <a href="category">Хуудас<i class="ion-ios-arrow-right"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="index">Нүүр хуудас</a></li>
+            <li><a href="/">Нүүр хуудас</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Баталгаажуулалт <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">
