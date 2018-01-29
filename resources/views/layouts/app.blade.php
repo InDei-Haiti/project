@@ -45,5 +45,13 @@
     <script src="{{asset('scripts/sweetalert/dist/sweetalert.min.js')}}"></script>
     <script src="{{asset('scripts/toast/jquery.toast.min.js')}}"></script>
     <script src="{{asset('js/e-magz.js')}}"></script>
+		<script>
+			@if(Session::has('success'))
+						$.toast({text: '{{Session::get('success')}}',position: 'top-right',heading: 'Мессеж',icon:'success'})
+			@endif
+			@if(Session::has('info'))
+						$.toast({text: '{{Session::get('info')}}',position: 'top-right',heading: 'Мессеж',icon:'info'})
+			@endif
+		</script>
   </body>
 </html>

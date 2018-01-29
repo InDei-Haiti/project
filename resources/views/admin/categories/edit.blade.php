@@ -6,19 +6,19 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Шинэ ангилал нэмэх
+      Ангилалыг засах: {{ $category->name }}
     </div>
     <div class="panel-body">
-    <form class="" action="{{ route('category.store')}}" method="post">
+    <form class="" action="{{ route('category.update',['id'=>$category->id])}}" method="post">
       {{ csrf_field() }}
       <div class="form-group">
         <label for="name">Ангилалын нэр</label>
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name" value="{{ $category->name }}" class="form-control">
       </div>
       <div class="form-group">
         <div class="text-center">
           <button class="btn btn-success" type="submit">
-            Ангилал нэмэх
+            Ангилалыг засах
           </button>
         </div>
       </div>

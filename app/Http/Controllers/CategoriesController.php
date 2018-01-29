@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\Category;
 use Illuminate\Http\Request;
+
 
 class CategoriesController extends Controller
 {
@@ -13,7 +16,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.categories.index')->with('categories',Category::all());
     }
 
     /**
@@ -38,7 +41,13 @@ class CategoriesController extends Controller
           'name'=>'required'
         ]);
 
-        dd($request->all());
+        $category=new Category;
+        $category->name=$request->name;
+        $category->save();
+
+        Session::flash('success',"Та амжилттай шинэ ангилал нэмлээ");
+
+        return redirect()->back();
     }
 
     /**
@@ -60,7 +69,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.categories.edit')->with('category',Category::find($id));
     }
 
     /**
@@ -72,7 +81,11 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $category=Category::find($id);
+      $category->name=$request->name;
+      $category->save();
+      Session::flash('success',"Та ангилалыг амжилттай засварлалаа");
+      return redirect()->route('categories');
     }
 
     /**
@@ -83,6 +96,10 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category=Category::find($id);
+
+        $category->delete();
+        Session::flash('success',"Та ангилалыг амжилттай устгалаа");
+        return redirect()->route('categories');
     }
 }
