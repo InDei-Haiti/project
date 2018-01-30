@@ -4,7 +4,7 @@
     <article class="featured">
       <div class="overlay"></div>
       <figure>
-        <img src="{{ asset('images/news/img0'.$post->id.'.jpg') }}" alt="Sample Article">
+        <img src="{{$post->featured}}" alt="Sample Article">
       </figure>
       <div class="details">
         <div class="category"><a href="category">Технологи</a></div>

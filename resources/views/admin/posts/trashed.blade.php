@@ -12,6 +12,7 @@
     <th>Устгах</th>
   <thead>
     <tbody>
+    @if($posts->count()>0)
     @foreach($posts as $post)
     <tr>
       <td><img src="{{$post->featured}}" alt="{{$post->title}}" width="100px" height="100px"></td>
@@ -25,9 +26,14 @@
       <td>
         <a href="{{route('post.kill',['id'=>$post->id])}}" class="btn btn-danger"><span class="ion-android-delete">Устгах</span></a>
       </td>
-
     </tr>
     @endforeach
+    @else
+      <tr>
+        <th colspan="5" class="text-center">Устгагдсан мэдээ байхгүй байна.</th>
+      </tr>
+    @endif
+
       </tbody>
 </table>
 </div>

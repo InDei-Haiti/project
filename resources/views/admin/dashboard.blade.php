@@ -33,21 +33,34 @@
         <li class="list-group-item">
           <a href="{{route('admin')}}">Нүүр хуудас</a>
         </li>
+				<li class="list-group-item">
+					<a href="{{route('categories')}}">Бүх ангилал</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('tags')}}">Бүх холбоос</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('posts')}}">Бүх мэдээ</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('users')}}">Бүх хэрэглэгч</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('post.trash')}}">Бүх устгагдсан мэдээ</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('category.create')}}">Шинэ ангилал нэмэх</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('tag.create')}}">Шинэ холбоос нэмэх</a>
+				</li>
         <li class="list-group-item">
-          <a href="{{route('post.create')}}">Мэдээ шинээр нэмэх</a>
+          <a href="{{route('post.create')}}">Шинэ мэдээ нэмэх</a>
         </li>
-        <li class="list-group-item">
-          <a href="{{route('category.create')}}">Ангилал шинээр  нэмэх</a>
-        </li>
-        <li class="list-group-item">
-          <a href="{{route('categories')}}">Бүх ангилал</a>
-        </li>
-        <li class="list-group-item">
-          <a href="{{route('post.index')}}">Бүх мэдээ</a>
-        </li>
-        <li class="list-group-item">
-          <a href="{{route('post.trash')}}">Устгагдсан мэдээ</a>
-        </li>
+
+
+
+
       </ul>
     </div>
     <div class="col-lg-8">

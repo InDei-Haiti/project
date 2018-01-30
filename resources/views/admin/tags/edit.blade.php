@@ -6,19 +6,19 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-      Шинэ ангилал нэмэх
+      Ангилалыг засах: {{ $tag->tag }}
     </div>
     <div class="panel-body">
-    <form class="" action="{{ route('category.store')}}" method="post">
+    <form class="" action="{{ route('tag.update',['id'=>$tag->id])}}" method="post">
       {{ csrf_field() }}
       <div class="form-group">
-        <label for="name">Ангилалын нэр</label>
-        <input id="name" type="text" name="name" class="form-control">
+        <label for="name">Холбоосын нэр</label>
+        <input id="name" type="text" name="tag" value="{{ $tag->tag }}" class="form-control">
       </div>
       <div class="form-group">
         <div class="text-center">
           <button class="btn btn-success" type="submit">
-            Ангилал нэмэх
+            Холбоосыг засах
           </button>
         </div>
       </div>

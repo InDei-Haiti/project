@@ -16,7 +16,8 @@
         <div class="inner">
           <figure>
             <a href="/single">
-              <img src="{{ asset('images/news/img0'.$post->id.'.jpg') }}" alt="Sample Article">
+              <img src="{{$post->featured}}" alt="Sample Article">
+              <!-- {{ asset('images/news/img0'.$post->id.'.jpg') }} -->
             </a>
           </figure>
           <div class="padding">

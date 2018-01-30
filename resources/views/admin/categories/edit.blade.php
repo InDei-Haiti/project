@@ -13,7 +13,7 @@
       {{ csrf_field() }}
       <div class="form-group">
         <label for="name">Ангилалын нэр</label>
-        <input type="text" name="name" value="{{ $category->name }}" class="form-control">
+        <input id="name" type="text" name="name" value="{{ $category->name }}" class="form-control">
       </div>
       <div class="form-group">
         <div class="text-center">

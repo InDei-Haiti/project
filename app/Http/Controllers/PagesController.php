@@ -9,8 +9,8 @@ use App\Category;
 class PagesController extends Controller
 {
   public function getHome(){
-    $posts=Post::join('categories','posts.category_id','=','categories.id')->select('posts.*','categories.name')->orderBy('id','desc')->take(4)->get();
-    return view('home')->with('posts',$posts);
+    // $posts=Post::join('categories','posts.category_id','=','categories.id')->select('posts.*','categories.name')->orderBy('id','desc')->take(4)->get();
+    return view('home')->with('posts',Post::all());
   }
   public function getAbout(){
     return view('about');

@@ -11,6 +11,7 @@
     <th>Устгах</th>
   <thead>
     <tbody>
+    @if($posts->count()>0)
     @foreach($posts as $post)
     <tr>
       <td><img src="{{$post->featured}}" alt="{{$post->title}}" width="100px" height="100px"></td>
@@ -24,6 +25,11 @@
 
     </tr>
     @endforeach
+    @else
+    <tr>
+      <th colspan="5" class="text-center">Мэдээ байхгүй байна</th>
+    </tr>
+    @endif
       </tbody>
 </table>
 </div>

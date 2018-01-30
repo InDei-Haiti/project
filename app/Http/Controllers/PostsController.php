@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 
@@ -36,7 +37,8 @@ class PostsController extends Controller
           return redirect()->back();
         }
 
-        return view('admin.posts.create')->with('categories',Category::all());//
+        return view('admin.posts.create') ->  with('categories',$categories)
+                                          ->  with('tags',Tag::all());
     }
 
     /**
@@ -48,13 +50,13 @@ class PostsController extends Controller
     public function store(Request $request)
     {
 
-
         $this->validate($request,[
           'title'=> 'required|max:255',
           'short_content'=> 'required',
           'post_content'=> 'required',
           'featured'=> 'required|image',
-          'category_id'=>'required'
+          'category_id'=>'required',
+          'tags'=>'required'
         ]);
 
         $featured=$request->featured;
@@ -69,6 +71,8 @@ class PostsController extends Controller
           'category_id'=>$request->category_id,
           'slug'=>str_slug($request->title)
         ]);
+
+        $post->tags()->attach($request->tags);
 
         Session::flash('success','Та амжилттай мэдээ нэмлээ');
 
@@ -94,7 +98,11 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post=Post::find($id);
+
+      return view('admin.posts.edit') ->  with('post',$post)
+                                      ->  with('categories',Category::all())
+                                      ->  with('tags',Tag::all());
     }
 
     /**
@@ -106,7 +114,38 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request,[
+        'title'=> 'required|max:255',
+        'short_content'=> 'required',
+        'post_content'=> 'required',
+        'category_id'=>'required'
+      ]);
+
+      $post=Post::find($id);
+
+      if($request->hasFile('featured'))
+      {
+        $featured=$request->featured;
+
+        $featured_new_name=time().$featured->getClientOriginalName();
+
+        $featured->move('uploads/posts',$featured_new_name);
+
+        $post->featured='uploads/posts'.$featured_new_name;
+      }
+
+      $post->title=$request->title;
+      $post->category_id=$request->category_id;
+      $post->short_content=$request->short_content;
+      $post->post_content=$request->post_content;
+
+      $post->save();
+
+      $post->tags()->sync($request->tags);
+
+      Session::flash('success','Мэдээ амжилттай засагдлаа');
+
+      return redirect()->route('posts');
     }
 
     /**
@@ -136,7 +175,6 @@ class PostsController extends Controller
     {
       $post=Post::withTrashed()->where('id',$id)->first();
 
-      dd($post);
       $post->forceDelete();
 
       Session::flash('success','Мэдээ бүр мөсөн устгагдлаа');

@@ -13,11 +13,11 @@
       {{ csrf_field() }}
       <div class="form-group">
         <label for="title">Гарчиг</label>
-        <input type="text" name="title" class="form-control">
+        <input id="title" type="text" name="title" class="form-control">
       </div>
       <div class="form-group">
         <label for="category">Ангилал</label>
-        <select class="form-control" id="category" name="category_id">
+        <select id="category" class="form-control" name="category_id">
           @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
           @endforeach
@@ -25,15 +25,23 @@
       </div>
       <div class="form-group">
         <label for="featured">Зураг</label>
-        <input type="file" name="featured" class="form-control">
+        <input id="featured" type="file" name="featured" class="form-control">
       </div>
       <div class="form-group">
+        <label for="tags">Холбоос</label>
+        @foreach($tags as $tag)
+        <div class="checkbox">
+          <label><input id="tags" type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag}}</label>
+        </div>
+        @endforeach
+    </div>
+      <div class="form-group">
         <label for="short_content">Богино контент</label>
-        <input type="text" name="short_content" class="form-control">
+        <input id="short_content" type="text" name="short_content" class="form-control">
       </div>
       <div class="form-group">
         <label for="post_content">Бүх контент</label>
-        <textarea type="file" name="post_content" id="content" cols="5" rows="5" class="form-control"></textarea>
+        <textarea id="post_content" type="file" name="post_content" id="content" cols="5" rows="5" class="form-control"></textarea>
       </div>
       <div class="form-group">
         <div class="text-center">
