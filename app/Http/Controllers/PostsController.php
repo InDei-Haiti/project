@@ -29,10 +29,11 @@ class PostsController extends Controller
     public function create()
     {
         $categories=Category::all();
+        $tags=Tag::all();
 
-        if($categories->count()==0)
+        if($categories->count()==0 || $tags->count()==0)
         {
-          Session::flash('info','Та мэдээ нэмэхийн тулд эхлээд ангилал үүсгэх шаардлагатай');
+          Session::flash('info','Та мэдээ нэмэхийн тулд эхлээд ангилал болон холбоос үүсгэх шаардлагатай');
 
           return redirect()->back();
         }

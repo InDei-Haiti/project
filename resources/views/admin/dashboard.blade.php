@@ -57,6 +57,9 @@
         <li class="list-group-item">
           <a href="{{route('post.create')}}">Шинэ мэдээ нэмэх</a>
         </li>
+        <li class="list-group-item">
+          <a href="{{route('settings')}}">Сайтын мэдээлэл</a>
+        </li>
 
 
 

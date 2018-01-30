@@ -1,5 +1,9 @@
 @extends('admin.dashboard')
 
+@section('stylesheets')
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+@endsection
+
 @section('admin_content')
 
 @include('admin.inc.errors')
@@ -41,7 +45,7 @@
       </div>
       <div class="form-group">
         <label for="post_content">Бүх контент</label>
-        <textarea id="post_content" type="file" name="post_content" id="content" cols="5" rows="5" class="form-control"></textarea>
+        <textarea id="post_content" type="file" name="post_content" cols="10" rows="150" class="form-control"></textarea>
       </div>
       <div class="form-group">
         <div class="text-center">
@@ -53,4 +57,13 @@
     </form>
   </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#post_content').summernote();
+  });
+</script>
 @endsection

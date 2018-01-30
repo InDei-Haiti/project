@@ -136,4 +136,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'uses'=>'UsersController@notadmin',
     'as'=>'user.notadmin'
   ]);
+  Route::get('settings',[
+    'uses'=>'SettingsController@index',
+    'as'=>'settings'
+  ]);
+  Route::post('setting/update',[
+    'uses'=>'SettingsController@update',
+    'as'=>'setting.update'
+  ]);
 });

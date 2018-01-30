@@ -29,6 +29,8 @@
 		<link rel="stylesheet" href="{{asset('css/style.css')}}">
 		<link rel="stylesheet" href="{{asset('css/skins/all.css')}}">
 		<link rel="stylesheet" href="{{asset('css/demo.css')}}">
+
+		@yield('stylesheets')
 	 </head>
   <body class="skin-default">
     @include('inc.header')
@@ -53,5 +55,6 @@
 						$.toast({text: '{{Session::get('info')}}',position: 'top-right',heading: 'Мессеж',icon:'info'})
 			@endif
 		</script>
+		@yield('scripts');
   </body>
 </html>
