@@ -15,7 +15,7 @@
       <article class="article">
         <div class="inner">
           <figure>
-            <a href="/single">
+            <a href="{{route('p',['id'=>$post->id])}}">
               <img src="{{$post->featured}}" alt="Sample Article">
               <!-- {{ asset('images/news/img0'.$post->id.'.jpg') }} -->
             </a>
@@ -23,9 +23,9 @@
           <div class="padding">
             <div class="detail">
                 <div class="time">{{ date_format($post->created_at,'m-р сарын d, Y') }}</div>
-                <div class="category"><a href="category">{{ $post->name }}</a></div>
+                <div class="category"><a href="category">{{$post->category->name}}</a></div>
             </div>
-            <h2><a href="/single">{{ $post->title }}</a></h2>
+            <h2><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h2>
             <p>{{ $post->short_content }}</p>
           </div>
         </div>

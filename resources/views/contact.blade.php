@@ -6,7 +6,7 @@
 				<div class="row">
 					<div class="col-md-12">
 	          <ol class="breadcrumb">
-	          	<li><a href="#">Нүүр хуудас</a></li>
+	          	<li><a href="{{route('app')}}">Нүүр хуудас</a></li>
 	            <li class="active">Холбоо барих</li>
 	          </ol>
 						<h1 class="page-title">Холбоо барих</h1>
@@ -20,12 +20,11 @@
 										Монголчууддаа зориулан энэхүү сайтыг нээв.
 									</p>
 									<p>
-										Утас: <span class="bold">+080 4293 4067</span> <br>
-										И-мэйл: <span class="bold">hangai247@gmail.com</span>
+										Утас: <span class="bold"> {{$setting->contact_number}}</span> <br>
+										И-мэйл: <span class="bold"> {{$setting->contact_email}}</span>
 										<br>
 										<br>
-										Inage Ku, Midoricho 1-19-11<br>
-										Japan, Chiba 263-0023
+										{{$setting->address}}
 									</p>
 								</div>
 								<div class="col-md-6 col-sm-6">

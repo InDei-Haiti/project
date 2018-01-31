@@ -55,6 +55,6 @@
 						$.toast({text: '{{Session::get('info')}}',position: 'top-right',heading: 'Мессеж',icon:'info'})
 			@endif
 		</script>
-		@yield('scripts');
+		@yield('scripts')
   </body>
 </html>

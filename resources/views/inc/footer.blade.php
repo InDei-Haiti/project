@@ -3,21 +3,23 @@
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="block">
-          <h1 class="block-title">Компаний тухай</h1>
+          <h1 class="block-title"> Бидний тухай</h1>
           <div class="block-body">
             <figure class="foot-logo">
               <img src="{{asset('images/logo.png')}}" class="img-responsive" alt="Logo">
             </figure>
             <p class="brand-description">
-              Ирлээ.NET сайтыг Японд амьдарч буй Монголчууддаа зориулан нээв.
+              Ирлээ.NET сайтыг Монголын бүхий л оюунлаг залуучууддаа зориулан бүтээв.
             </p>
-            <a href="\about" class="btn btn-magz white">Бидний тухай <i class="ion-ios-arrow-thin-right"></i></a>
+            <a href="{{route('about')}}" class="btn btn-magz white">Дэлгэрэнгүй <i class="ion-ios-arrow-thin-right"></i></a>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <div class="block">
-          <h1 class="block-title">Түгээмэл холбоос <div class="right"><a href="#">Бүгдийг харах <i class="ion-ios-arrow-thin-right"></i></a></div></h1>
+          <h1 class="block-title">Түгээмэл холбоос
+            <!-- <div class="right"><a href="#">Бүгдийг харах <i class="ion-ios-arrow-thin-right"></i></a></div> -->
+          </h1>
           <div class="block-body">
             <ul class="tags">
               <li><a href="#">HTML5</a></li>

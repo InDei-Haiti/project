@@ -11,18 +11,18 @@
       </div>
       @endif
       <figure>
-        <a href="/single">
+        <a href="{{route('p',['id'=>$post->id])}}">
           <img src="{{$post->featured}}" alt="Sample Article">
         </a>
       </figure>
       <div class="details">
         <div class="detail">
           <div class="category">
-            <a href="#">Кино</a>
+            <a href="#">{{$post->category->name}}</a>
           </div>
           <div class="time">{{ date_format($post->created_at,'m-р сарын d, Y') }}</div>
         </div>
-        <h1><a href="/single">{{ $post->title }}</a></h1>
+        <h1><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h1>
         <p>{{ $post->short_content }}</p>
         <footer>
           <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>273</div></a>

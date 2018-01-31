@@ -25,6 +25,11 @@ Route::get('/test',function(){
   return App\User::find(1)->profile;
 });
 
+Route::get('/p/{id}',[
+  'uses'=>'PagesController@singlePost',
+  'as'=>'p'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

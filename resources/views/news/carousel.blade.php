@@ -7,9 +7,9 @@
         <img src="{{$post->featured}}" alt="Sample Article">
       </figure>
       <div class="details">
-        <div class="category"><a href="category">Технологи</a></div>
-        <h1><a href="/single">{{ $post->title }}</a></h1>
-        <div class="time">{{ date_format($post->created_at,'m-р сарын d, Y') }}</div>
+        <div class="category"><a href="category">{{$post->category->name}}</a></div>
+        <h1><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h1>
+        <div class="time">{{$post->created_at->diffForHumans()}}</div>
       </div>
     </article>
   </div>
