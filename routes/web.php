@@ -11,6 +11,15 @@
 |
 */
 
+
+Route::post('/subscribe',function(){
+  $email=request('email');
+
+  Newsletter::subscribe($email);
+
+  Session::flash('success','Та амжилттай бүртгүүллээ, одооноос манай сайтын хамгийн сүүлийн үеийн мэдээтэй хамт байх болно.');
+  return redirect()->back();
+});
 Route::get('/','PagesController@getHome')->name('app');
 Route::get('/403','PagesController@getError403')->name('403');
 Route::get('/404','PagesController@getError404')->name('404');
@@ -20,14 +29,22 @@ Route::get('/about','PagesController@getAbout')->name('about');
 Route::get('/contact','PagesController@getContact')->name('contact');
 Route::get('/single','PagesController@getSingle')->name('single');
 Route::get('/category','PagesController@getCategory')->name('category');
-Route::get('/search','PagesController@getSearch')->name('search');
-Route::get('/test',function(){
-  return App\User::find(1)->profile;
-});
+Route::get('/search',function(){
+    $posts=\App\Post::where('title','like','%'.request('query').'%')->get();
+    return view('result')->with('posts',$posts);
+})->name('search');
 
 Route::get('/p/{id}',[
-  'uses'=>'PagesController@singlePost',
+  'uses'=>'PagesController@getPost',
   'as'=>'p'
+]);
+Route::get('/c/{id}',[
+  'uses'=>'PagesController@getCategory',
+  'as'=>'c'
+]);
+Route::get('/t/{id}',[
+  'uses'=>'PagesController@getTag',
+  'as'=>'t'
 ]);
 
 Auth::routes();
@@ -38,6 +55,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
   Route::get('/',[
     'uses'=>'PagesController@getAdmin',
     'as'=>'admin'
+  ]);
+  Route::get('/dashboard',[
+    'uses'=>'PagesController@getDashboard',
+    'as'=>'dashboard'
   ]);
   Route::get('/posts',[
     'uses' => 'PostsController@index',

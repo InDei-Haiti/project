@@ -22,13 +22,7 @@
           </h1>
           <div class="block-body">
             <ul class="tags">
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-              <li><a href="#">Bootstrap 3</a></li>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Creative Mind</a></li>
-              <li><a href="#">Standing On The Train</a></li>
-              <li><a href="#">at 6.00PM</a></li>
+              <li><a href="#"></a></li>
             </ul>
           </div>
         </div>
@@ -37,14 +31,15 @@
           <h1 class="block-title">Сонин</h1>
           <div class="block-body">
             <p>Захиалснаар та хамгийн сүүлийн үеийн мэдээг байнга авах болно.</p>
-            <form class="newsletter">
+            <form class="newsletter" method="POST" action="/subscribe">
+              {{ csrf_field() }}
               <div class="input-group">
                 <div class="input-group-addon">
                   <i class="ion-ios-email-outline"></i>
                 </div>
                 <input type="email" class="form-control email" placeholder="Таны мэйл">
               </div>
-              <button class="btn btn-primary btn-block white">Захиалах</button>
+              <button type="submit" class="btn btn-primary btn-block white">Захиалах</button>
             </form>
           </div>
         </div>

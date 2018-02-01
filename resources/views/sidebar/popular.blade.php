@@ -1,5 +1,5 @@
 <aside>
-  <h1 class="aside-title">Эрэлттэй <a href="#" class="all">Бүгд <i class="ion-ios-arrow-right"></i></a></h1>
+  <h1 class="aside-title">Хэлэлцүүлэг <a href="#" class="all">Бүгд <i class="ion-ios-arrow-right"></i></a></h1>
   <div class="aside-body">
     <article class="article-mini">
       <div class="inner">

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="Монголын хамгийн том портал сайт">
+		<meta name="description" content="Монгол портал сайт">
 		<meta name="author" content="Сонинхангай">
 		<meta name="keyword" content="Mongolian Portal Website">
 		<!-- Shareable -->

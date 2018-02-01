@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->text('post_content');
             $table->integer('category_id')->unsigned();
             $table->string('featured')->default(0);
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.index')
 
 @section('admin_content')
 <div class="panel panel-default">

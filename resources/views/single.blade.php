@@ -8,7 +8,7 @@
           <aside>
             <div class="aside-body">
               <figure class="ads">
-                <img src="images/ad.png">
+                <img src="{{asset('images/ad.png')}}">
                 <figcaption>Зар сурталчилгаа</figcaption>
               </figure>
             </div>
@@ -25,9 +25,9 @@
             <header>
               <h1>{{$post->title}}</h1>
               <ul class="details">
-                <li>Posted on {{ date_format($post->created_at,'m-р сарын d, Y') }}</li>
-                <li><a>Film</a></li>
-                <li>By <a href="#">Сонинхангай</a></li>
+                <li>{{ date_format($post->created_at,'m-р сарын d, Y') }}</li>
+                <li><a href="{{route('c',['id'=>$post->category_id])}}">{{$post->category->name}}</a></li>
+                <li>By <a href="#">{{$post->user->name}}</a></li>
               </ul>
             </header>
             <div class="main">
@@ -38,13 +38,15 @@
                   <figcaption>Зургийг </figcaption>
                 </figure>
               </div>
+              <div>
               {!!$post->post_content!!}
               </div>
+            </div>
             <footer>
               <div class="col">
                 <ul class="tags">
                   @foreach($post->tags as $tag)
-                    <li><a href="#">{{$tag->tag}}</a></li>
+                    <li><a href="{{route('t',['id'=>$tag->id])}}">{{$tag->tag}}</a></li>
                   @endforeach
                 </ul>
               </div>
@@ -88,19 +90,19 @@
             </ul>
           </div>
           <div class="line">
-            <div>Author</div>
+            <div>Нийтлэлч</div>
           </div>
           <div class="author">
             <figure>
-              <img src="images/img01.jpg">
+              <img src="{{asset('images/img01.jpg')}}">
             </figure>
             <div class="details">
               <div class="job">Веб хөгжүүлэгч</div>
-              <h3 class="name">Сонинхангай</h3>
-              <p>Nulla sagittis rhoncus nisi, vel gravida ante. Nunc lobortis condimentum elit, quis porta ipsum rhoncus vitae. Curabitur magna leo, porta vel fringilla gravida, consectetur in libero. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+              <h3 class="name">{{$post->user->name}}</h3>
+              <blockquote>{{$post->user->profile->about}}</blockquote>
               <ul class="social trp sm">
                 <li>
-                  <a href="#" class="facebook">
+                  <a href="{{$post->user->profile->facebook}}" class="facebook">
                     <svg><rect/></svg>
                     <i class="ion-social-facebook"></i>
                   </a>
@@ -112,7 +114,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="youtube">
+                  <a href="{{$post->user->profile->youtube}}" class="youtube">
                     <svg><rect/></svg>
                     <i class="ion-social-youtube"></i>
                   </a>
@@ -126,19 +128,19 @@
               </ul>
             </div>
           </div>
-          <div class="line"><div>You May Also Like</div></div>
+          <div class="line"><div>Таны сонорт</div></div>
           <div class="row">
             <article class="article related col-md-6 col-sm-6 col-xs-12">
               <div class="inner">
                 <figure>
                   <a href="#">
-                    <img src="images/news/img03.jpg">
+                    <img src="{{asset('images/news/img03.jpg')}}">
                   </a>
                 </figure>
                 <div class="padding">
                   <h2><a href="#">Duis aute irure dolor in reprehenderit in voluptate</a></h2>
                   <div class="detail">
-                    <div class="category"><a href="category.html">Lifestyle</a></div>
+                    <div class="category"><a href="">Lifestyle</a></div>
                     <div class="time">December 26, 2016</div>
                   </div>
                 </div>
@@ -148,13 +150,13 @@
               <div class="inner">
                 <figure>
                   <a href="#">
-                    <img src="images/news/img08.jpg">
+                    <img src="{{asset('images/news/img08.jpg')}}">
                   </a>
                 </figure>
                 <div class="padding">
                   <h2><a href="#">Duis aute irure dolor in reprehenderit in voluptate</a></h2>
                   <div class="detail">
-                    <div class="category"><a href="category.html">Lifestyle</a></div>
+                    <div class="category"><a href="">Lifestyle</a></div>
                     <div class="time">December 26, 2016</div>
                   </div>
                 </div>
@@ -168,7 +170,7 @@
               <div class="item">
                 <div class="user">
                   <figure>
-                    <img src="images/img01.jpg">
+                    <img src="{{asset('images/img01.jpg')}}">
                   </figure>
                   <div class="details">
                     <h5 class="name">Сонинхангай</h5>
@@ -187,7 +189,7 @@
               <div class="item">
                 <div class="user">
                   <figure>
-                    <img src="images/img01.jpg">
+                    <img src="{{asset('images/img01.jpg')}}">
                   </figure>
                   <div class="details">
                     <h5 class="name">Сонинхангай</h5>
@@ -202,11 +204,11 @@
                     </footer>
                   </div>
                 </div>
-                <div class="Хариулах-list">
+                <div class="reply-list">
                   <div class="item">
                     <div class="user">
                       <figure>
-                        <img src="images/img01.jpg">
+                        <img src="{{asset('images/img01.jpg')}}">
                       </figure>
                       <div class="details">
                         <h5 class="name">Сонинхангай</h5>
@@ -228,7 +230,7 @@
               <div class="item">
                 <div class="user">
                   <figure>
-                    <img src="images/img01.jpg">
+                    <img src="{{asset('images/img01.jpg')}}">
                   </figure>
                   <div class="details">
                     <h5 class="name">Сонинхангай</h5>
@@ -245,6 +247,7 @@
                 </div>
               </div>
             </div>
+            @include('inc.disqus')
             <form class="row" id="response">
               <div class="col-md-12">
                 <h3 class="title">Сэтгэгдлээ үлдээнэ үү.</h3>

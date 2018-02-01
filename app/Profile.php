@@ -10,5 +10,5 @@ class Profile extends Model
       return $this->belongTo('App\User');
     }
 
-    protected $fillable=['user_id','avatar','about','facebook','youtube'];
+    protected $fillable=['user_id','avatar','about','facebook','youtube','job'];
 }

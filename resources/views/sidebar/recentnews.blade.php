@@ -5,7 +5,7 @@
       <div class="inner">
         <figure>
           <a href="/single">
-            <img src="images/news/img16.jpg">
+            <img src="{{asset('images/news/img16.jpg')}}">
           </a>
         </figure>
         <div class="details">
@@ -26,7 +26,7 @@
       <div class="inner">
         <figure>
           <a href="/single">
-            <img src="images/news/img05.jpg">
+            <img src="{{asset('images/news/img05.jpg')}}">
           </a>
         </figure>
         <div class="padding">
@@ -42,7 +42,7 @@
       <div class="inner">
         <figure>
           <a href="/single">
-            <img src="images/news/img02.jpg">
+            <img src="{{asset('images/news/img02.jpg')}}">
           </a>
         </figure>
         <div class="padding">
@@ -58,7 +58,7 @@
       <div class="inner">
         <figure>
           <a href="/single">
-            <img src="images/news/img13.jpg">
+            <img src="{{asset('images/news/img13.jpg')}}">
           </a>
         </figure>
         <div class="padding">

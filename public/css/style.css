@@ -4,6 +4,8 @@
  * Font Name: Lato, Raleway
  */
 /* Lato Hariline */
+@charset 'utf-8';
+
 @font-face {
   font-family: 'Lato';
   font-weight: 100;
@@ -473,7 +475,7 @@ a.twitch {
 .pagination {
   margin-bottom: 10px;
 }
-.pagination li a {
+.pagination li a{
   color: #333;
   border-radius: 50% !important;
   margin: 0 2px;
@@ -485,7 +487,7 @@ a.twitch {
   text-align: center;
   padding: 0;
 }
-.pagination li.active a {
+.pagination li.active a{
   color: #fff;
   transform: scale(1.16) translateX(-3px);
   -moz-transform: scale(1.16) translateX(-3px);

@@ -11,7 +11,7 @@
               <img src="images/img01.jpg" alt="Sample Article">
             </figure>
             <div class="featured-author-info">
-              <h2 class="name">Сонинхангай Билэгдэмбэрэл</h2>
+              <h2 class="name">{{$user->name}}</h2>
               <div class="desc">@hangai247</div>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <div class="item">
               <a href="#">
                 <div class="name"><strong>Нийтлэл</strong></div>
-                <div class="value">208</div>
+                <div class="value">{{$user->posts->count()}}</div>
               </a>
             </div>
             <div class="item">
@@ -40,21 +40,15 @@
             </div>
           </div>
           <div class="featured-author-quote">
-            "Өвөл айсуй"
+            {{$user->profile->about}}
           </div>
           <div class="block">
             <h2 class="block-title">Зураг</h2>
             <div class="block-body">
               <ul class="item-list-round" data-magnific="gallery">
-                <li><a href="images/news/img06.jpg" style="background-image: url('images/news/img06.jpg');"></a></li>
-                <li><a href="images/news/img07.jpg" style="background-image: url('images/news/img07.jpg');"></a></li>
-                <li><a href="images/news/img08.jpg" style="background-image: url('images/news/img08.jpg');"></a></li>
-                <li><a href="images/news/img09.jpg" style="background-image: url('images/news/img09.jpg');"></a></li>
-                <li><a href="images/news/img10.jpg" style="background-image: url('images/news/img10.jpg');"></a></li>
-                <li><a href="images/news/img11.jpg" style="background-image: url('images/news/img11.jpg');"></a></li>
-                <li><a href="images/news/img12.jpg" style="background-image: url('images/news/img12.jpg');"><div class="more">+2</div></a></li>
-                <li class="hidden"><a href="images/news/img13.jpg" style="background-image: url('images/news/img13.jpg');"></a></li>
-                <li class="hidden"><a href="images/news/img14.jpg" style="background-image: url('images/news/img14.jpg');"></a></li>
+                @foreach($user->posts->take(8) as $post)
+                  <li><a href="{{$post->featured}}" style="background-image: url('{{$post->featured}}');"></a></li>
+                @endforeach
               </ul>
             </div>
           </div>

@@ -14,31 +14,29 @@
     <div id="menu-list">
       <ul class="nav-list">
         <li class="for-tablet nav-title"><a>Цэс</a></li>
-        <li class="for-tablet"><a href="login">Нэвтрэх</a></li>
-        <li class="for-tablet"><a href="register">Бүртгүүлэх</a></li>
+        <li class="for-tablet"><a href="{{route('login')}}">Нэвтрэх</a></li>
+        <li class="for-tablet"><a href="{{route('register')}}">Бүртгүүлэх</a></li>
         <li class="dropdown magz-dropdown">
           <a href="category">Хуудас<i class="ion-ios-arrow-right"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="/">Нүүр хуудас</a></li>
+            <li><a href="{{route('app')}}">Нүүр хуудас</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Баталгаажуулалт <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="login">Login</a></li>
-                <li><a href="register">Register</a></li>
-                <li><a href="forgot">Forgot Password</a></li>
-                <li><a href="reset">Reset Password</a></li>
+                <li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('register')}}">Register</a></li>
+                <li><a href="#">Forgot Password</a></li>
+                <li><a href="#">Reset Password</a></li>
               </ul>
             </li>
-            <li><a href="category">Ангилал</a></li>
-            <li><a href="single">Ганц хуудас</a></li>
             <li><a href="search">Хайлт</a></li>
             <li class="dropdown magz-dropdown">
               <a href="#">Алдаа <i class="ion-ios-arrow-right"></i></a>
               <ul class="dropdown-menu">
-                <li><a href="403">403</a></li>
-                <li><a href="404">404</a></li>
-                <li><a href="500">500</a></li>
-                <li><a href="503">503</a></li>
+                <li><a href="{{route('403')}}">403</a></li>
+                <li><a href="{{route('404')}}">404</a></li>
+                <li><a href="{{route('500')}}">500</a></li>
+                <li><a href="{{route('503')}}">503</a></li>
               </ul>
             </li>
           </ul>
@@ -46,19 +44,28 @@
         <li class="dropdown magz-dropdown magz-dropdown-megamenu"><a href="#">Мэдээ <i class="ion-ios-arrow-right"></i> <div class="badge">Шинэ</div></a>
           @include('inc.metamenu')
         </li>
-        <li class="dropdown magz-dropdown"><a href="#">Хэрэглэгч <i class="ion-ios-arrow-right"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#"><i class="icon ion-person"></i> Миний данс</a></li>
-            <li><a href="#"><i class="icon ion-heart"></i> Дуртай</a></li>
-            <li><a href="#"><i class="icon ion-chatbox"></i> Сэтгэгдэл</a></li>
-            <li><a href="#"><i class="icon ion-key"></i> Нууц үгээ солих</a></li>
-            <li><a href="#"><i class="icon ion-settings"></i> Тохиргоо</a></li>
-            <li class="divider"></li>
-            <li><a href="#"><i class="icon ion-log-out"></i> Гарах</a></li>
-          </ul>
-        </li>
-        <li><a href="/about">Бидний тухай </a></li>
-        <li><a href="/contact">Холбоо барих </a></li>
+        <li><a href="{{route('about')}}">Бидний тухай </a></li>
+        <li><a href="{{route('contact')}}">Холбоо барих </a></li>
+        @guest
+        @else
+              <li class="dropdown magz-dropdown"><a href="#">Хэрэглэгч <i class="ion-ios-arrow-right"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{route('admin')}}"><i class="icon ion-person"></i> Миний данс</a></li>
+                  <li><a href="#"><i class="icon ion-heart"></i> Дуртай</a></li>
+                  <li><a href="#"><i class="icon ion-chatbox"></i> Сэтгэгдэл</a></li>
+                  <li><a href="#"><i class="icon ion-key"></i> Нууц үгээ солих</a></li>
+                  <li><a href="#"><i class="icon ion-settings"></i> Тохиргоо</a></li>
+                  <li class="divider"></li>
+                  <li><a href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();"><i class="icon ion-log-out"></i> Гарах</a>
+                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   {{ csrf_field() }}
+                                 </form>
+                  </li>
+                </ul>
+              </li>
+          @endguest
       </ul>
     </div>
   </div>

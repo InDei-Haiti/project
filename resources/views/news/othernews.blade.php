@@ -18,7 +18,7 @@
       <div class="details">
         <div class="detail">
           <div class="category">
-            <a href="#">{{$post->category->name}}</a>
+            <a href="{{route('c',['id'=>$post->category_id])}}">{{$post->category->name}}</a>
           </div>
           <div class="time">{{ date_format($post->created_at,'m-р сарын d, Y') }}</div>
         </div>

@@ -7,7 +7,7 @@
         <img src="{{$post->featured}}" alt="Sample Article">
       </figure>
       <div class="details">
-        <div class="category"><a href="category">{{$post->category->name}}</a></div>
+        <div class="category"><a href="{{route('c',['id'=>$post->category_id])}}">{{$post->category->name}}</a></div>
         <h1><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h1>
         <div class="time">{{$post->created_at->diffForHumans()}}</div>
       </div>

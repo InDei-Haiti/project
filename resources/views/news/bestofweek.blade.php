@@ -23,7 +23,7 @@
           <div class="padding">
             <div class="detail">
                 <div class="time">{{ date_format($post->created_at,'m-р сарын d, Y') }}</div>
-                <div class="category"><a href="category">{{$post->category->name}}</a></div>
+                <div class="category"><a href="{{route('c',['id'=>$post->category_id])}}">{{$post->category->name}}</a></div>
             </div>
             <h2><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h2>
             <p>{{ $post->short_content }}</p>

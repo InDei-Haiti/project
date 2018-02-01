@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-12">
         <div class="brand">
-          <a href="/">
+          <a href="{{route('app')}}">
             <img src="{{asset('images/logo.png')}}" alt="Magz Logo">
           </a>
         </div>
@@ -30,12 +30,14 @@
           </div>
         </form>
       </div>
+      @guest
       <div class="col-md-3 col-sm-12 text-right">
         <ul class="nav-icons">
-          <li><a href="register"><i class="ion-person-add"></i><div>Элсэх</div></a></li>
-          <li><a href="login"><i class="ion-person"></i><div>Нэвтрэх</div></a></li>
+          <li><a href="{{route('register')}}"><i class="ion-person-add"></i><div>Элсэх</div></a></li>
+          <li><a href="{{route('login')}}"><i class="ion-person"></i><div>Нэвтрэх</div></a></li>
         </ul>
       </div>
+      @endguest
     </div>
   </div>
 </div>

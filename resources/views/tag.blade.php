@@ -9,10 +9,10 @@
             <div class="col-md-12">
               <ol class="breadcrumb">
                 <li><a href="{{route('home')}}">Нүүр хуудас</a></li>
-                <li class="active">{{$category->name}}</li>
+                <li class="active">#{{$tag->tag}}</li>
               </ol>
-              <h1 class="page-title">Ангилал: {{$category->name}}</h1>
-              <p class="page-subtitle"><i>{{$category->name}}</i> ангилалын бүх мэдээг харуулж байна</p>
+              <h1 class="page-title">Холбоос: {{$tag->tag}}</h1>
+              <p class="page-subtitle"><i>{{$tag->tag}}</i> холбоостой бүх мэдээг харуулж байна</p>
             </div>
           </div>
           <div class="line"></div>
@@ -47,13 +47,11 @@
               </div>
             </article>
             @endforeach
-
-
             <div class="col-md-12 text-center">
               {{$posts->links()}}
-              <div class="pagination-help-text">
-                Нийт: {{$posts->total()}}
-              </div>
+                  <div class="pagination-help-text">
+                    Нийт: {{$posts->total()}}
+                  </div>
             </div>
           </div>
         </div>
