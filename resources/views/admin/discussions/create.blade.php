@@ -1,4 +1,4 @@
-@extends('admin.discussions.index')
+@extends('admin.discussions.forum')
 
 @section('admin_content')
 	<div class="panel panel-default">

@@ -204,4 +204,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'uses'=>'ForumsController@channel',
     'as'=>'channel'
   ]);
+
+  Route::get('/discussion/watch/{id}',[
+    'uses'=>'WatchersController@watch',
+    'as'=>'discussion.watch'
+  ]);
+  Route::get('/discussion/unwatch/{id}',[
+    'uses'=>'WatchersController@unwatch',
+    'as'=>'discussion.unwatch'
+  ]);
 });

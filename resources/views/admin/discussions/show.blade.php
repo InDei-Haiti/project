@@ -1,30 +1,16 @@
-@extends('layouts.app')
+@extends('admin.discussions.forum')
 
-@section('content')
-<section class="home">
-<div class="container">
-	<div class="row">
-    <div class="col-lg-4">
-      <a href="{{route('discussions.create')}}" class="form-control btn btn-primary ">Шинэ хэлэлцүүлэг нээх</a>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a href="{{route('discussions.index')}}">Бүгд</a>
-        </li>
-        @foreach($channels as $channel)
-        <li class="list-group-item">
-          <a href="{{$channel->name}}">{{$channel->name}}</a>
-        </li>
-        @endforeach
-      </ul>
-    </div>
-    <div class="col-lg-8">
-      @section('admin_content')
+@section('admin_content')
       <div class="panel panel-default">
         <div class="panel-heading">
           <img src="{{asset($discussion->user->avatar)}}" alt="" width="40px" height="40px">&nbsp;
           <span>{{$discussion->user->name}}</span>,
           <span>{{$discussion->created_at->diffForHumans()}}</span>
-          <a href="{{route('discussions.show',['id'=>$discussion->id])}}" class="btn btn-sm btn-primary pull-right">Хариулах</a>
+          @if($discussion->is_being_watched_by_auth_user())
+            <a href="{{route('discussion.unwatch',['id' => $discussion->id])}}" class="btn btn-success btn-sm pull-right"><i class="ion-eye-disabled"></i>Харахгүй</a>
+          @else
+            <a href="{{route('discussion.watch',['id' => $discussion->id])}}" class="btn btn-success btn-sm pull-right"><i class="ion-eye"></i>Харъя</a>
+          @endif
         </div>
         <div class="panel-body">
           <h5 class="text-center">{{$discussion->title}}</h5>
@@ -51,13 +37,14 @@
             </p>
           </div>
           <div class="panel-footer">
-            <p>
+            <span>
               @if($reply->is_liked_by_auth_user())
                 <a href="{{route('reply.unlike',['id'=>$reply->id])}}" class="btn btn-primary btn-sm">Unlike<span class="badge">{{$reply->likes->count()}}</span></a>
               @else
                 <a href="{{route('reply.like',['id'=>$reply->id])}}" class="btn btn-success btn-sm">Like <span class="badge">{{$reply->likes->count()}}</span></a>
               @endif
-            </p>
+            </span>
+
           </div>
         </div>
       @endforeach
@@ -75,9 +62,4 @@
           </form>
         </div>
       </div>
-      @show
-    </div>
-	</div>
-</div>
-</section>
-@endsection
+      @stop

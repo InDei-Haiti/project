@@ -30,11 +30,6 @@ class Reply extends Model
         array_push($likers,$like->user_id);
       }
 
-      if(in_array($id,$likers)){
-        return true;
-      }
-      else {
-        return false;
-      }
+      return in_array($id,$likers);
     }
 }
