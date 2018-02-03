@@ -602,7 +602,7 @@ $(function(){
 				paddingRight: 60
 			});
 			$this.after($("<div/>", {
-				html: 'Show',
+				html: '<span class="ion-eye"><span>',
 				class: 'btn btn-primary btn-sm',
 				id: 'passeye-toggle-'+i,
 				style: 'position:absolute;right:10px;top:50%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);-o-transform:translate(0,-50%);padding: 2px 7px;font-size:12px;cursor:pointer;'
@@ -682,9 +682,9 @@ $(function(){
 
 	stickyHeader();
 
-	love();
 
-	newsletter();
+
+
 
 	featuredImage();
 

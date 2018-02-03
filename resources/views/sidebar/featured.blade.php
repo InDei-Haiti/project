@@ -8,7 +8,7 @@
           </div>
           <div class="featured-author-center">
             <figure class="featured-author-picture">
-              <img src="images/img01.jpg" alt="Sample Article">
+              <img src="{{$user->avatar}}" alt="Sample Article">
             </figure>
             <div class="featured-author-info">
               <h2 class="name">{{$user->name}}</h2>

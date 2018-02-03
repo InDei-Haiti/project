@@ -20,6 +20,16 @@ Route::post('/subscribe',function(){
   Session::flash('success','Та амжилттай бүртгүүллээ, одооноос манай сайтын хамгийн сүүлийн үеийн мэдээтэй хамт байх болно.');
   return redirect()->back();
 });
+
+Route::get('{provider}/auth',[
+  'uses'=>'SocialsController@auth',
+  'as'=>'social.auth'
+]);
+
+Route::get('/{provider}/redirect',[
+  'uses'=>'SocialsController@auth_callback',
+  'as'=>'social.callback'
+]);
 Route::get('/','PagesController@getHome')->name('app');
 Route::get('/403','PagesController@getError403')->name('403');
 Route::get('/404','PagesController@getError404')->name('404');
@@ -170,4 +180,14 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'uses'=>'SettingsController@update',
     'as'=>'setting.update'
   ]);
+
+  Route::get('/post/like/{id}',[
+    'uses'=>'PostsController@like',
+    'as'=>'post.like'
+  ]);
+  Route::get('/post/unlike/{id}',[
+    'uses'=>'PostsController@unlike',
+    'as'=>'post.unlike'
+  ]);
+  Route::resource('channels','ChannelsController');
 });

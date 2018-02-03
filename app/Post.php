@@ -4,13 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Auth;
 
 class Post extends Model
 {
     use SoftDeletes;
 
     protected $fillable=[
-      'title','short_content','post_content','featured','category_id','slug','user_id'
+      'title',
+      'short_content',
+      'post_content',
+      'featured',
+      'category_id',
+      'slug',
+      'user_id'
     ];
 
     public function getFeaturedAttribute($featured)

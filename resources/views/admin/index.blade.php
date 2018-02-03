@@ -13,6 +13,9 @@
 					<a href="{{route('categories')}}">Бүх ангилал</a>
 				</li>
 				<li class="list-group-item">
+					<a href="{{route('channels.index')}}">Бүх сувгууд</a>
+				</li>
+				<li class="list-group-item">
 					<a href="{{route('tags')}}">Бүх холбоос</a>
 				</li>
 				<li class="list-group-item">

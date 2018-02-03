@@ -5,7 +5,7 @@
 
   <div class="col-md-6 col-sm-6 col-xs-12">
     <div class="row">
-      @foreach($postscol1 as $post)
+      @foreach($posts->take(2) as $post)
       <article class="article col-md-12">
         <div class="inner">
           <figure>
@@ -22,7 +22,7 @@
             <p>{{ $post->short_content }}</p>
             <footer>
               <a href="#" class="love"><i class="ion-android-favorite-outline"></i><div>1263</div></a>
-              <a class="btn btn-primary more" href="/single">
+              <a class="btn btn-primary more" href="{{route('p',['id'=>$post->id])}}">
                 <div>Уншъя</div>
                 <div><i class="ion-ios-arrow-thin-right"></i></div>
               </a>
@@ -35,7 +35,7 @@
   </div>
   <div class="col-md-6 col-sm-6 col-xs-12">
     <div class="row">
-      @foreach($postscol2 as $post)
+      @foreach($posts->take(-2) as $post)
       <article class="article col-md-12">
         <div class="inner">
           <figure>
@@ -51,8 +51,9 @@
             <h2><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h2>
             <p>{{ $post->short_content }}</p>
             <footer>
-              <a href="#" class="love"><i class="ion-android-favorite-outline"></i> <div>1263</div></a>
-              <a class="btn btn-primary more" href="/single">
+                <a href="{{route('post.unlike',['id'=>$post->id])}}" class="love active"><i class="ion-android-favorite-outline"></i> <div></div></a>
+
+              <a class="btn btn-primary more" href="{{route('p',['id'=>$post->id])}}">
                 <div>Уншъя</div>
                 <div><i class="ion-ios-arrow-thin-right"></i></div>
               </a>

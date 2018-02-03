@@ -27,7 +27,7 @@
               <ul class="details">
                 <li>{{ date_format($post->created_at,'m-р сарын d, Y') }}</li>
                 <li><a href="{{route('c',['id'=>$post->category_id])}}">{{$post->category->name}}</a></li>
-                <li>By <a href="#">{{$post->user->name}}</a></li>
+                <li>Нийтлэлч: <a href="#">{{$post->user->name}}</a></li>
               </ul>
             </header>
             <div class="main">
@@ -94,7 +94,7 @@
           </div>
           <div class="author">
             <figure>
-              <img src="{{asset('images/img01.jpg')}}">
+              <img src="{{$post->user->avatar}}">
             </figure>
             <div class="details">
               <div class="job">Веб хөгжүүлэгч</div>

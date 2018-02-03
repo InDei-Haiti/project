@@ -7,6 +7,7 @@ use Auth;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\Like;
 use Illuminate\Http\Request;
 
 
@@ -192,6 +193,23 @@ class PostsController extends Controller
       $post->restore();
 
       Session::flash('success','Мэдээ буцан сэргээгдлээ');
+
+      return redirect()->back();
+    }
+
+    public function like($id)
+    {
+      Like::create([
+        'user_id'=>Auth::id(),
+        'post_id'=>$id
+      ]);
+
+      return redirect()->back();
+    }
+    public function unlike($id)
+    {
+      $like=Like::where('user_id',Auth::id())->where('post_id',$id)->first();
+      $like->delete();
 
       return redirect()->back();
     }
