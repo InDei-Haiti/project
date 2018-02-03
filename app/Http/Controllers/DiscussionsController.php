@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Discussion;
+use App\Reply;
+use Auth;
 use Session;
-use App\Channel;
 
-
-class ChannelsController extends Controller
+class DiscussionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class ChannelsController extends Controller
      */
     public function index()
     {
-        return view('admin.channels.index')->with('channels',Channel::all());
+        $discussions=Discussion::orderBy('created_at','desc')->paginate(3);
+        return view('admin.discussions.index')->with('discussions',$discussions);
     }
 
     /**
@@ -26,7 +28,7 @@ class ChannelsController extends Controller
      */
     public function create()
     {
-        return view('admin.channels.create');
+        return view('admin.discussions.create');
     }
 
     /**
@@ -35,20 +37,24 @@ class ChannelsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $this->middleware('admin');
-        $this->validate($request,[
-          'name' =>'required'
-        ]);
+      $r=request();
+      $this->validate($r,[
+        'title'=>'required',
+        'channel_id'=>'required',
+        'content'=>'required'
+      ]);
 
-        Channel::create([
-          'name'=> $request->name
-        ]);
+      $discussion=Discussion::create([
+        'title'=>$r->title,
+        'channel_id'=>$r->channel_id,
+        'content'=>$r->content,
+        'user_id'=>Auth::id(),
+      ]);
 
-        Session::flash('success','Амжилттай суваг нэмлээ');
-
-        return redirect()->route('channels.index');
+      Session::flash('success','Хэлэлцүүлгийг амжилттай нэмлээ');
+      return redirect()->route('discussions.show',['id'=>$discussion->id]);
     }
 
     /**
@@ -59,7 +65,7 @@ class ChannelsController extends Controller
      */
     public function show($id)
     {
-        //
+      return view('admin.discussions.show')->with('discussion',Discussion::find($id));
     }
 
     /**
@@ -70,7 +76,7 @@ class ChannelsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.channels.edit')->with('channel',Channel::find($id));
+        //
     }
 
     /**
@@ -82,15 +88,7 @@ class ChannelsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $channel=Channel::find($id);
-
-        $channel->name=$request->name;
-
-        $channel->save();
-
-        Session::flash('success','Сувгийг амжилттай заслаа');
-
-        return redirect()->route('channels.index');
+        //
     }
 
     /**
@@ -101,12 +99,21 @@ class ChannelsController extends Controller
      */
     public function destroy($id)
     {
-        $channel=Channel::find($id);
+        //
+    }
 
-        $channel->delete();
+    public function reply($id){
 
-        Session::flash('success','Сувгийг амжилттай устгалаа');
+      $this->validate(request(),[
+        'reply'=>'required'
+      ]);
+      Reply::create([
+        'user_id'=>Auth::id(),
+        'discussion_id'=>$id,
+        'content'=>request()->reply
+      ]);
+      Session::flash('success','Та асуулгад хариуллаа. Баярлалаа');
 
-        return redirect()->back();
+      return redirect()->back();
     }
 }

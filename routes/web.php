@@ -30,6 +30,11 @@ Route::get('/{provider}/redirect',[
   'uses'=>'SocialsController@auth_callback',
   'as'=>'social.callback'
 ]);
+
+Route::get('/forum',[
+  'uses'=>'ForumsController@index',
+  'as'=>'forum'
+]);
 Route::get('/','PagesController@getHome')->name('app');
 Route::get('/403','PagesController@getError403')->name('403');
 Route::get('/404','PagesController@getError404')->name('404');
@@ -181,13 +186,22 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'as'=>'setting.update'
   ]);
 
-  Route::get('/post/like/{id}',[
-    'uses'=>'PostsController@like',
-    'as'=>'post.like'
+  Route::get('/reply/like/{id}',[
+    'uses'=>'RepliesController@like',
+    'as'=>'reply.like'
   ]);
-  Route::get('/post/unlike/{id}',[
-    'uses'=>'PostsController@unlike',
-    'as'=>'post.unlike'
+  Route::get('/reply/unlike/{id}',[
+    'uses'=>'RepliesController@unlike',
+    'as'=>'reply.unlike'
   ]);
   Route::resource('channels','ChannelsController');
+  Route::resource('discussions','DiscussionsController');
+  Route::post('discussions/reply/{id}',[
+    'uses'=>'DiscussionsController@reply',
+    'as'=>'discussion.reply'
+  ]);
+  Route::get('channel/{id}',[
+    'uses'=>'ForumsController@channel',
+    'as'=>'channel'
+  ]);
 });

@@ -18,7 +18,12 @@
             <a href="{{route('channels.edit',['channel'=>$channel->id])}}" class="btn btn-info"><span class="ion-edit"></span></a>
           </td>
           <td>
-            <a href="{{route('channels.destroy',['channel'=>$channel->id])}}" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+            <form action="{{route('channels.destroy',['channel'=>$channel->id])}}" method="POST">
+              {{ csrf_field() }}
+              {{ method_field('DELETE') }}
+              <button class="btn btn-danger"type="submit" name="button"><span class="ion-android-delete"></span></button>
+            </form>
+
           </td>
         </tr>
       @endforeach

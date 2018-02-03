@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Auth;
 class Reply extends Model
 {
     protected $fillable=[
@@ -26,15 +26,15 @@ class Reply extends Model
 
       $likers=array();
 
-      foreach($this->likes() as $like){
+      foreach($this->likes as $like){
         array_push($likers,$like->user_id);
       }
 
       if(in_array($id,$likers)){
-        return TRUE;
+        return true;
       }
       else {
-        return FALSE;
+        return false;
       }
     }
 }

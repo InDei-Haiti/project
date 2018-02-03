@@ -14,7 +14,7 @@
     @if($users->count()>0)
     @foreach($users as $user)
     <tr>
-      <td><img src="{{asset($user->profile->avatar)}}" alt="{{$user->name}}" width="100px" height="100px"></td>
+      <td><img src="{{asset($user->avatar)}}" alt="{{$user->name}}" width="100px" height="100px"></td>
       <td>{{$user->name}}</td>
       <td>
 

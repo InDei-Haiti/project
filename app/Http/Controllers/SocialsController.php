@@ -17,9 +17,9 @@ class SocialsController extends Controller
       SocialAuth::login($provider,function($user,$details){
         $user->email = $details->email;
         $user->name = $details->full_name;
+        $user->avatar=$details->avatar;
         $user->save();
         $user->profile()->save(new Profile);
-        $user->avatar=$details->avatar;
       });
       return redirect('/');
     }

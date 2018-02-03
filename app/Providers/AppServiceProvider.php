@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Channel;
+use App\Discussion;
+use View;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);//
+        Schema::defaultStringLength(191);
+        View::share('channels',Channel::all()); //
+        View::share('discussions',Discussion::all()); //
     }
 
     /**

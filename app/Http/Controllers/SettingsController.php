@@ -8,6 +8,10 @@ use Session;
 
 class SettingsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         return view('admin.settings')->with('settings',Setting::first());

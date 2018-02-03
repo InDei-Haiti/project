@@ -97,7 +97,7 @@
               <img src="{{$post->user->avatar}}">
             </figure>
             <div class="details">
-              <div class="job">Веб хөгжүүлэгч</div>
+              <div class="job">{{$post->user->profile->job}}</div>
               <h3 class="name">{{$post->user->name}}</h3>
               <blockquote>{{$post->user->profile->about}}</blockquote>
               <ul class="social trp sm">

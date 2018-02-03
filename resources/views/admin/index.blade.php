@@ -10,10 +10,10 @@
           <a href="{{route('dashboard')}}">Нүүр хуудас</a>
         </li>
 				<li class="list-group-item">
-					<a href="{{route('categories')}}">Бүх ангилал</a>
+					<a href="{{route('channels.index')}}">Бүх сувгууд</a>
 				</li>
 				<li class="list-group-item">
-					<a href="{{route('channels.index')}}">Бүх сувгууд</a>
+					<a href="{{route('categories')}}">Бүх ангилал</a>
 				</li>
 				<li class="list-group-item">
 					<a href="{{route('tags')}}">Бүх холбоос</a>
@@ -22,10 +22,10 @@
 					<a href="{{route('posts')}}">Бүх мэдээ</a>
 				</li>
 				<li class="list-group-item">
-					<a href="{{route('users')}}">Бүх хэрэглэгч</a>
+					<a href="{{route('discussions.index')}}">Бүх хэлэлцүүлэг</a>
 				</li>
 				<li class="list-group-item">
-					<a href="{{route('post.trash')}}">Бүх устгагдсан мэдээ</a>
+					<a href="{{route('channels.create')}}">Шинэ суваг нэмэх</a>
 				</li>
 				<li class="list-group-item">
 					<a href="{{route('category.create')}}">Шинэ ангилал нэмэх</a>
@@ -36,9 +36,17 @@
         <li class="list-group-item">
           <a href="{{route('post.create')}}">Шинэ мэдээ нэмэх</a>
         </li>
-        <li class="list-group-item">
-          <a href="{{route('settings')}}">Сайтын мэдээлэл</a>
-        </li>
+				@if(Auth::user()->admin)
+				<li class="list-group-item">
+					<a href="{{route('users')}}">Бүх хэрэглэгч</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('settings')}}">Сайтын мэдээлэл</a>
+				</li>
+				<li class="list-group-item">
+					<a href="{{route('post.trash')}}">Бүх устгагдсан мэдээ</a>
+				</li>
+				@endif
       </ul>
     </div>
     <div class="col-lg-8">
