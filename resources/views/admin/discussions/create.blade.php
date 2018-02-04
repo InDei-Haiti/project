@@ -2,6 +2,13 @@
 
 @section('admin_content')
 	<div class="panel panel-default">
+		@if($errors->count()>0)
+			<ul class="list-group text-danger">
+				@foreach($errors->all() as $error)
+					<li class="list-group-item">{{$error}}</li>
+				@endforeach
+			</ul>
+		@endif
 		<div class="panel-heading text-center">Хэлэлцүүлэг нээх</div>
 		<div class="panel-body">
 			<form action="{{route('discussions.store')}}" method="Post">
@@ -16,11 +23,11 @@
 				</div>
 				<div class="form-group">
 					<label for="title">Гарчиг</label>
-					<input type="text" class="form-control" name="title">
+					<input id="title" type="text" class="form-control" name="title" value="{{old('title')}}">
 				</div>
 				<div class="form-group">
 					<label for="content">Асуух дэлгэрэнгүй асуултаа энд бичнэ үү</label>
-					<textarea name="content" rows="15" cols="10" class=form-control></textarea>
+					<textarea id="content" name="content" rows="15" cols="10" class=form-control>{{old('content')}}</textarea>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-success text-center" type="submit">Хэлэлцүүлгийг нэмэх</button>

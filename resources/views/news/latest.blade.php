@@ -51,7 +51,7 @@
             <h2><a href="{{route('p',['id'=>$post->id])}}">{{ $post->title }}</a></h2>
             <p>{{ $post->short_content }}</p>
             <footer>
-                <a href="{{route('post.unlike',['id'=>$post->id])}}" class="love active"><i class="ion-android-favorite"></i> <div></div></a>
+              <a href="/" class="love active"><i class="ion-android-favorite"></i> <div></div></a>
               <a class="btn btn-primary more" href="{{route('p',['id'=>$post->id])}}">
                 <div>Уншъя</div>
                 <div><i class="ion-ios-arrow-thin-right"></i></div>

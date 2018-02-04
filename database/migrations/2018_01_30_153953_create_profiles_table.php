@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->text('about')->nullable();
+            $table->bigInteger('points')->default(50);
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
             $table->string('job')->nullable();

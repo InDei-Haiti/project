@@ -200,6 +200,11 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'uses'=>'DiscussionsController@reply',
     'as'=>'discussion.reply'
   ]);
+
+  Route::get('/reply/best_answer/{id}',[
+    'uses'=>'RepliesController@best_answer',
+    'as'=>'reply.best_answer'
+  ]);
   Route::get('channel/{id}',[
     'uses'=>'ForumsController@channel',
     'as'=>'channel'

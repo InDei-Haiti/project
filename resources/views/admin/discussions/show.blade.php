@@ -3,20 +3,40 @@
 @section('admin_content')
       <div class="panel panel-default">
         <div class="panel-heading">
-          <img src="{{asset($discussion->user->avatar)}}" alt="" width="40px" height="40px">&nbsp;
-          <span>{{$discussion->user->name}}</span>,
+          <img src="{{asset($discussion->user->avatar)}}" alt="" width="40px" height="40px"  style="border-radius: 50%">&nbsp;
+          <span><b>{{$discussion->user->name}}({{$discussion->user->profile->points}})</b></span>,
           <span>{{$discussion->created_at->diffForHumans()}}</span>
           @if($discussion->is_being_watched_by_auth_user())
-            <a href="{{route('discussion.unwatch',['id' => $discussion->id])}}" class="btn btn-success btn-sm pull-right"><i class="ion-eye-disabled"></i>Харахгүй</a>
+            <a href="{{route('discussion.unwatch',['id' => $discussion->id])}}" class="btn btn-info btn-sm pull-right"><i class="ion-eye-disabled"></i>Харахгүй</a>
           @else
-            <a href="{{route('discussion.watch',['id' => $discussion->id])}}" class="btn btn-success btn-sm pull-right"><i class="ion-eye"></i>Харъя</a>
+            <a href="{{route('discussion.watch',['id' => $discussion->id])}}" class="btn btn-info btn-sm pull-right"><i class="ion-eye"></i>Харъя</a>
+          @endif
+          @if($discussion->has_best_answer())
+          <span class="btn btn-sm btn-danger pull-right">Хаагдсан</span>
+          @else
+          <span class="btn btn-sm btn-success pull-right">Нээлттэй</span>
           @endif
         </div>
         <div class="panel-body">
           <h5 class="text-center">{{$discussion->title}}</h5>
           <p>
-            {{str_limit($discussion->content,50)}}
+            {{str_limit($discussion->content)}}
           </p>
+          <hr>
+          @if($best_answer)
+            <div class="text-center">
+              <h5>Хамгийн зөв хариулт</h5>
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <img src="{{asset($best_answer->user->avatar)}}" alt="" width="40px" height="40px" style="border-radius: 50%">&nbsp;
+                  <span><b>{{$best_answer->user->name}}({{$best_answer->user->profile->points}})</b></span>,
+                </div>
+                <div class="panel-body">
+                  {{$best_answer->content}}
+                </div>
+              </div>
+            </div>
+          @endif
         </div>
         <div class="panel-footer">
           <p>
@@ -28,12 +48,17 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <img src="{{asset($reply->user->avatar)}}" alt="" width="40px" height="40px">&nbsp;
-            <span>{{$reply->user->name}}</span>,
+            <span><b>{{$reply->user->name}}({{$reply->user->profile->points}})</b></span>,
             <span>{{$reply->created_at->diffForHumans()}}</span>
+            @if(!$best_answer)
+              @if(Auth::id()==$discussion->user->id)
+                <a href="{{route('reply.best_answer',['id'=>$reply->id])}}" class="btn btn-info btn-sm pull-right">Хамгийн зөв хариулт</a>
+              @endif
+            @endif
           </div>
           <div class="panel-body">
             <p>
-              {{$reply->content,50}}
+              {{$reply->content}}
             </p>
           </div>
           <div class="panel-footer">

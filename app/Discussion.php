@@ -35,4 +35,17 @@ class Discussion extends Model
       endforeach;
       return in_array($id,$watchers_ids);
     }
+
+    public function has_best_answer()
+    {
+      $result=false;
+      foreach($this->replies as $reply)
+      {
+        if($reply->best_answer){
+          $result=true;
+          break;
+        }
+      }
+      return $result;
+    }
 }

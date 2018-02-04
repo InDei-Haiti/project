@@ -13,6 +13,15 @@
             <li class="list-group-item">
               <a href="{{route('discussions.index')}}">Бүгд</a>
             </li>
+						<li class="list-group-item">
+							<a href="{{route('discussions.index',['filter'=>'me'])}}">Миний хэлэлцүүлэг</a>
+						</li>
+						<li class="list-group-item">
+							<a href="{{route('discussions.index',['filter'=>'solved'])}}">Хаагдсан хэлэлцүүлэг</a>
+						</li>
+						<li class="list-group-item">
+							<a href="{{route('discussions.index',['filter'=>'unsolved'])}}">Нээлттэй хэлэлцүүлэг</a>
+						</li>
           </ul>
         </div>
       </div>
