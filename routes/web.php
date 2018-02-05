@@ -210,12 +210,20 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'as'=>'channel'
   ]);
 
-  Route::get('/discussion/watch/{id}',[
+  Route::get('/discussions/watch/{id}',[
     'uses'=>'WatchersController@watch',
-    'as'=>'discussion.watch'
+    'as'=>'discussions.watch'
   ]);
-  Route::get('/discussion/unwatch/{id}',[
+  Route::get('/discussions/unwatch/{id}',[
     'uses'=>'WatchersController@unwatch',
-    'as'=>'discussion.unwatch'
+    'as'=>'discussions.unwatch'
+  ]);
+  Route::get('/replies/edit/{id}',[
+    'uses'=>'RepliesController@edit',
+    'as'=>'replies.edit'
+  ]);
+  Route::post('/replies/update/{id}',[
+    'uses'=>'RepliesController@update',
+    'as'=>'replies.update'
   ]);
 });

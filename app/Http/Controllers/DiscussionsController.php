@@ -111,7 +111,7 @@ class DiscussionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.discussions.edit')->with('discussion',Discussion::find($id));
     }
 
     /**
@@ -123,7 +123,17 @@ class DiscussionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(),[
+          'content'=>'required'
+        ]);
+
+        $discussion=Discussion::find($id);
+
+        $discussion->content=request()->content;
+
+        $discussion->save();
+
+        return redirect()->route('discussions.show',['id'=>$discussion->id]);
     }
 
     /**

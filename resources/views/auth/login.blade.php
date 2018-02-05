@@ -46,6 +46,7 @@
               эсвэл
             </div>
             <a href="{{route('social.auth',['provider'=>'facebook'])}}" class="btn btn-social btn-block facebook"><i class="ion-social-facebook"></i> Facebook-ээр нэвтрэх</a>
+            <a href="{{route('social.auth',['provider'=>'github'])}}" class="btn btn-social btn-block github"><i class="ion-social-github"></i> GitHub-аар нэвтрэх</a>
           </form>
         </div>
       </div>

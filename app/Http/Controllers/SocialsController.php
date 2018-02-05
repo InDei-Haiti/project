@@ -14,6 +14,7 @@ class SocialsController extends Controller
     }
     public function auth_callback($provider)
     {
+      SocialAuth::login($provider);
       SocialAuth::login($provider,function($user,$details){
         $user->email = $details->email;
         $user->name = $details->full_name;

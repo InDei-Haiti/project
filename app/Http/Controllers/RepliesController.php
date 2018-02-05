@@ -41,4 +41,16 @@ class RepliesController extends Controller
 
       return redirect()->back();
     }
+
+    public function edit($id){
+      return view('admin.replies.edit')->with('reply',Reply::find($id));
+    }
+
+    public function update($id){
+      $reply=Reply::find($id);
+      $reply->content=request()->content;
+      $reply->save();
+
+      return redirect()->route('discussions.show',['id'=>$reply->discussion_id]);
+    }
 }

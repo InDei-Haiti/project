@@ -5,15 +5,15 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<img src="{{asset($d->user->avatar)}}" alt="" width="40px" height="40px" style="border-radius: 50%">&nbsp;
-							<span>{{$d->user->name}}</span>,
+							<span><b>{{$d->user->name}}({{$d->user->profile->points}})</b></span>,
 							<span>{{$d->created_at->diffForHumans()}}</span>
               @if($d->has_best_answer())
-              <span class="btn btn-sm btn-danger pull-right">Хаагдсан</span>
+              <span class="btn btn-rounded btn-sm btn-danger pull-right"><i class="ion-close"></i>Хаагдсан</span>
               @else
-              <span class="btn btn-sm btn-success pull-right">Нээлттэй</span>
+              <span class="btn btn-rounded btn-sm btn-success pull-right"><i class="ion-android-open"></i>Нээлттэй</span>
               @endif
-              <a href="{{route('discussions.show',['id'=>$d->id])}}" class="btn btn-sm btn-info pull-right">Хариулах</a>
-						</div>
+              <a href="{{route('channel',['id'=>$d->channel->id])}}" class="btn btn-rounded btn-info btn-sm pull-right">{{$d->channel->name}}</a>
+            </div>
 						<div class="panel-body">
 							<h5 class="text-center">{{$d->title}}</h5>
 							<p>
@@ -24,7 +24,7 @@
 							<span>
 								{{$d->replies->count()}} хариулт
 							</span>
-							<a href="{{route('channel',['id'=>$d->channel->id])}}" class="btn btn-info btn-sm pull-right">{{$d->channel->name}}</a>
+              <a href="{{route('discussions.show',['id'=>$d->id])}}" class="btn btn-rounded btn-sm btn-info pull-right">Хариулах</a>
 					  </div>
 					</div>
         @endforeach
