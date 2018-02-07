@@ -17,15 +17,11 @@
             </a>
           </div>
           <div class="owl-carousel owl-theme" id="headline">
+            @foreach($discussions as $discussion)
             <div class="item">
-              <a href="#"><div class="badge">Онцлох!</div> Шинэ сайт зарна.</a>
+              <a href="{{route('discussions.show',['id'=>$discussion->id])}}"><div class="badge">{{$discussion->channel->name}}</div> {{str_limit($discussion->title,50)}}</a>
             </div>
-            <div class="item">
-              <a href="#">Дараа дараагийн мэдээ</a>
-            </div>
-            <div class="item">
-              <a href="#">Яаралтай зарын хэсэг</a>
-            </div>
+            @endforeach
           </div>
         </div>
         @include('news.carousel')

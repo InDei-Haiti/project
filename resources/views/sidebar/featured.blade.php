@@ -12,7 +12,7 @@
             </figure>
             <div class="featured-author-info">
               <h2 class="name">{{$user->name}}</h2>
-              <div class="desc">@hangai247</div>
+              <div class="desc">....</div>
             </div>
           </div>
         </div>
@@ -26,8 +26,8 @@
             </div>
             <div class="item">
               <a href="#">
-                <div class="name"><strong>Зүрх</strong></div>
-                <div class="value">3,729</div>
+                <div class="name"><strong>Оноо</strong></div>
+                <div class="value">{{$user->profile->points}}</div>
               </a>
             </div>
             <div class="item">

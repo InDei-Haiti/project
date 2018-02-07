@@ -29,7 +29,7 @@
 		<link rel="stylesheet" href="{{asset('css/style.css')}}">
 		<link rel="stylesheet" href="{{asset('css/skins/all.css')}}">
 		<link rel="stylesheet" href="{{asset('css/demo.css')}}">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 		@yield('stylesheets')
 	 </head>
   <body class="skin-default">
@@ -56,5 +56,7 @@
 			@endif
 		</script>
 		@yield('scripts')
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

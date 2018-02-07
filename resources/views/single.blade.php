@@ -94,7 +94,7 @@
           </div>
           <div class="author">
             <figure>
-              <img src="{{$post->user->avatar}}">
+              <img src="{{asset($post->user->avatar)}}">
             </figure>
             <div class="details">
               <div class="job">{{$post->user->profile->job}}</div>

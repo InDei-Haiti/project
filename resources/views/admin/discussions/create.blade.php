@@ -17,7 +17,7 @@
 						<label for="channel_id">Сувгаа сонгоно уу</label>
 						<select id="channel_id" class="form-control" name="channel_id">
 							@foreach($channels as $channel)
-								<option value="{{route('channel',['id'=>$channel->id])}}">{{$channel->name}}</option>
+								<option value="{{$channel->id}}">{{$channel->name}}</option>
 							@endforeach
 						</select>
 					</div>

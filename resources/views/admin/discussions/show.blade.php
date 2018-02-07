@@ -23,7 +23,7 @@
         <div class="panel-body">
           <h5 class="text-center">{{$discussion->title}}</h5>
           <p>
-            {{str_limit($discussion->content)}}
+            {!! Markdown::convertToHtml($discussion->content) !!}
           </p>
           <hr>
           @if($best_answer)
@@ -35,7 +35,7 @@
                   <span><b>{{$best_answer->user->name}}({{$best_answer->user->profile->points}})</b></span>,
                 </div>
                 <div class="panel-body">
-                  {{$best_answer->content}}
+                  {!! Markdown::convertToHtml($best_answer->content) !!}
                 </div>
               </div>
             </div>
@@ -64,7 +64,7 @@
           </div>
           <div class="panel-body">
             <p>
-              {{$reply->content}}
+              {!! Markdown::convertToHtml($reply->content) !!}
             </p>
           </div>
           <div class="panel-footer">

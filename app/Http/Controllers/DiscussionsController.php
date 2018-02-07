@@ -11,6 +11,7 @@ use Session;
 use Notication;
 use App\Notifications\NewReplyAdded;
 use Illuminate\Pagination\Paginator;
+use Markdown;
 
 class DiscussionsController extends Controller
 {
