@@ -5,10 +5,10 @@
 @include('admin.inc.errors')
 
 <div class="panel panel-default">
-    <div class="panel-heading">
-      Сувгийг засах: {{ $channel->name }}
-    </div>
-    <div class="panel-body">
+  <div class="panel-heading">
+    Сувгийг засах: {{ $channel->name }}
+  </div>
+  <div class="panel-body">
     <form class="" action="{{ route('channels.update',['channel'=>$channel->id])}}" method="post">
       {{ csrf_field() }}
       {{ method_field('PUT')}}
@@ -21,8 +21,6 @@
           <button class="btn btn-success" type="submit">
             Сувгийг засах
           </button>
-        </div>
-      </div>
         </div>
       </div>
     </form>

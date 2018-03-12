@@ -25,6 +25,13 @@
 								{{$d->replies->count()}} хариулт
 							</span>
               <a href="{{route('discussions.show',['id'=>$d->id])}}" class="btn btn-rounded btn-sm btn-info pull-right">Хариулах</a>
+              @if(Auth::id()==$d->user_id)
+                <form action="{{route('discussions.destroy',['id'=>$d->id])}}" method="post" class="pull-right">
+                  {{csrf_field()}}
+                  {{method_field('DELETE')}}
+                  <button class="btn btn-rounded btn-sm btn-danger" type="submit"><i class="ion-android-delete"></i>Устгах</button>
+                </form>
+              @endif
 					  </div>
 					</div>
         @endforeach

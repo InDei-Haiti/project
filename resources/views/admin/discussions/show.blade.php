@@ -27,10 +27,10 @@
           </p>
           <hr>
           @if($best_answer)
-            <div class="text-center">
-              <h5>Хамгийн зөв хариулт</h5>
+            <div>
+              <h5 class="text-center">Хамгийн зөв хариулт</h5>
               <div class="panel panel-success">
-                <div class="panel-heading">
+                <div class="panel-heading text-center">
                   <img src="{{asset($best_answer->user->avatar)}}" alt="" width="40px" height="40px" style="border-radius: 50%">&nbsp;
                   <span><b>{{$best_answer->user->name}}({{$best_answer->user->profile->points}})</b></span>,
                 </div>
@@ -60,6 +60,7 @@
             @endif
             @if(Auth::id()==$reply->user_id && !$reply->best_answer)
               <a href="{{route('replies.edit',['id'=>$reply->id])}}" class="btn btn-rounded btn-info btn-sm pull-right"><i class="ion-edit"></i>Засах</a>
+              <a href="{{route('replies.delete',['id'=>$reply->id])}}" class="btn btn-rounded btn-danger btn-sm pull-right"><i class="ion-android-delete"></i>Устгах</a>
             @endif
           </div>
           <div class="panel-body">

@@ -1133,7 +1133,7 @@ section.search .search-result {
 }
 .form-group .form-control {
   border-radius: 0;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 .form-group .form-control:focus {

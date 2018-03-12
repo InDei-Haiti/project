@@ -21,11 +21,11 @@
           <div class="help-block">
             <div><strong>Түгээмэл:</strong></div>
             <ul>
-              <li><a href="#"><strong>Ажил</strong></a></li>
-              <li><a href="#">Байр</a></li>
-              <li><a href="#">Зарна</a></li>
-              <li><a href="#">Мөнгөх солилцох</a></li>
-              <li><a href="#">Ачаа дайх</a></li>
+              <li><a href="#"><strong>Улс төр</strong></a></li>
+              <li><a href="#">Эдийн засаг</a></li>
+              <li><a href="#">Эрүүл мэнд</a></li>
+              <li><a href="#">Спорт</a></li>
+              <li><a href="#">Технологи</a></li>
             </ul>
           </div>
         </form>

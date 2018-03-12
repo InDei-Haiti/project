@@ -5,10 +5,10 @@
 @include('admin.inc.errors')
 
 <div class="panel panel-default">
-    <div class="panel-heading">
-      Ангилалыг засах: {{ $category->name }}
-    </div>
-    <div class="panel-body">
+  <div class="panel-heading">
+    Ангилалыг засах: {{ $category->name }}
+  </div>
+  <div class="panel-body">
     <form class="" action="{{ route('category.update',['id'=>$category->id])}}" method="post">
       {{ csrf_field() }}
       <div class="form-group">
@@ -20,8 +20,6 @@
           <button class="btn btn-success" type="submit">
             Ангилалыг засах
           </button>
-        </div>
-      </div>
         </div>
       </div>
     </form>

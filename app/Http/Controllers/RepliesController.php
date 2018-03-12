@@ -53,4 +53,11 @@ class RepliesController extends Controller
 
       return redirect()->route('discussions.show',['id'=>$reply->discussion_id]);
     }
+    public function destroy($id)
+    {
+      $reply=Reply::find($id);
+      $reply->delete();
+
+      return redirect()->back();
+    }
 }

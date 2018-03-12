@@ -14,8 +14,28 @@
     <div id="menu-list">
       <ul class="nav-list">
         <li class="for-tablet nav-title"><a>Цэс</a></li>
+        @guest
         <li class="for-tablet"><a href="{{route('login')}}">Нэвтрэх</a></li>
         <li class="for-tablet"><a href="{{route('register')}}">Бүртгүүлэх</a></li>
+        @else
+          <li class="dropdown magz-dropdown"><a href="#">Хэрэглэгч <i class="ion-ios-arrow-right"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="{{route('admin')}}"><i class="icon ion-person"></i> Миний данс</a></li>
+              <li><a href="#"><i class="icon ion-heart"></i> Дуртай</a></li>
+              <li><a href="#"><i class="icon ion-chatbox"></i> Сэтгэгдэл</a></li>
+              <li><a href="#"><i class="icon ion-key"></i> Нууц үгээ солих</a></li>
+              <li><a href="#"><i class="icon ion-settings"></i> Тохиргоо</a></li>
+              <li class="divider"></li>
+              <li><a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();"><i class="icon ion-log-out"></i> Гарах</a>
+                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                               {{ csrf_field() }}
+                           </form>
+              </li>
+            </ul>
+          </li>
+        @endguest
         <li class="dropdown magz-dropdown">
           <a href="category">Хуудас<i class="ion-ios-arrow-right"></i></a>
           <ul class="dropdown-menu">
@@ -46,26 +66,6 @@
         </li>
         <li><a href="{{route('about')}}">Бидний тухай </a></li>
         <li><a href="{{route('contact')}}">Холбоо барих </a></li>
-        @guest
-        @else
-              <li class="dropdown magz-dropdown"><a href="#">Хэрэглэгч <i class="ion-ios-arrow-right"></i></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{route('admin')}}"><i class="icon ion-person"></i> Миний данс</a></li>
-                  <li><a href="#"><i class="icon ion-heart"></i> Дуртай</a></li>
-                  <li><a href="#"><i class="icon ion-chatbox"></i> Сэтгэгдэл</a></li>
-                  <li><a href="#"><i class="icon ion-key"></i> Нууц үгээ солих</a></li>
-                  <li><a href="#"><i class="icon ion-settings"></i> Тохиргоо</a></li>
-                  <li class="divider"></li>
-                  <li><a href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();"><i class="icon ion-log-out"></i> Гарах</a>
-                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                   {{ csrf_field() }}
-                                 </form>
-                  </li>
-                </ul>
-              </li>
-          @endguest
       </ul>
     </div>
   </div>

@@ -194,6 +194,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     'uses'=>'RepliesController@unlike',
     'as'=>'reply.unlike'
   ]);
+  Route::get('/replies/delete/{id}',[
+    'uses'=>'RepliesController@destroy',
+    'as'=>'replies.delete'
+  ]);
   Route::resource('channels','ChannelsController');
   Route::resource('discussions','DiscussionsController');
   Route::post('discussions/reply/{id}',[

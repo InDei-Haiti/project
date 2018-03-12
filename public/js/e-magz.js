@@ -124,7 +124,7 @@ $(function(){
 					$this.find(".icon").addClass("spin");
 					$this.find(".icon i").removeClass("ion-ios-email-outline");
 					$this.find(".icon i").addClass("ion-load-b");
-					$this.find(".icon h1").html("Please wait ...");
+					$this.find(".icon h1").html("Түр хүлээнэ үү...");
 					$this.find(".btn").attr("disabled", true);
 					$this.find(".email").attr("disabled", true);
 				},
@@ -133,16 +133,16 @@ $(function(){
 					$this.find(".icon").addClass("success");
 					$this.find(".icon i").addClass("ion-checkmark");
 					$this.find(".icon i").removeClass("ion-load-b");
-					$this.find(".icon h1").html("Thank you!");
+					$this.find(".icon h1").html("Баярлалаа");
 					$this.find(".email").val("");
 					$this.find(".btn").attr("disabled", false);
 					$this.find(".email").attr("disabled", false);
 					$.toast({
-						text: "Thanks for subscribing!",
+						text: "Бүртгүүлсэнд баярлалаа!",
 						position: 'bottom-right',
 						bgcolor: '#E01A31',
 						icon: 'success',
-						heading: 'Newsletter',
+						heading: 'Сонин',
 						loader: false
 					});
 				},
@@ -151,14 +151,14 @@ $(function(){
 					$this.find(".icon").addClass("error");
 					$this.find(".icon i").addClass("ion-ios-close-outline");
 					$this.find(".icon i").removeClass("ion-load-b");
-					$this.find(".icon h1").html("Failed, try again!");
+					$this.find(".icon h1").html("Амжилтгүй боллоо.");
 					$this.find(".btn").attr("disabled", false);
 					$this.find(".email").attr("disabled", false);
 					$.toast({
-						text: "Failed, network error. Please try again!",
+						text: "Дахин оролдоно уу",
 						position: 'bottom-right',
 						icon: 'error',
-						heading: 'Newsletter',
+						heading: 'Сонин',
 						loader: false
 					});
 				}
@@ -167,34 +167,22 @@ $(function(){
 			if($this.find(".email").val().trim().length < 1) {
 				$this.find(".email").focus();
 			}else{
-				/*
-				 * Add your ajax code
-				 * ------------------
-				 * For example:
-				 * $.ajax({
-				 * 		url: "subscribe_url",
-				 * 		type: "post",
-				 *  	data: $this.serialize(),
-				 * 		error: function() {
-				 * 			newsletter.error();
-				 * 		},
-				 * 		beforeSend: function() {
-				 * 			newsletter.start();
-				 * 		},
-				 * 		success: function() {
-				 * 			newsletter.end();
-				 * 		}
-				 * });
+
+				 $.ajax({
+				 		url: "/subscribe",
+				 		type: "post",
+				  	data: $this.serialize(),
+				 		error: function() {
+				 			newsletter.error();
+				 		},
+				 		beforeSend: function() {
+				 			newsletter.start();
+				 		},
+				 		success: function() {
+				 			newsletter.end();
+				 		}
 				 });
-				*/
-
-				newsletter.start();
-
-				setTimeout(function(){
-					newsletter.end();
-				}, 2000);
 			}
-
 			return false;
 		});
 	}
@@ -682,8 +670,7 @@ $(function(){
 
 	stickyHeader();
 
-
-
+	newsletter();
 
 
 	featuredImage();
